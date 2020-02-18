@@ -1,0 +1,13 @@
+{
+  "editor.tabSize": 4,
+  "liveSassCompile.settings.formats": [
+        // This is Default.
+        {
+            "format": "compressed", // nested, expanded, compact, compressed
+            "extensionName": ".css",
+            // "extensionName": ".min.css",
+            "savePath": "/dist/css/"
+        }
+    ],
+    "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+}

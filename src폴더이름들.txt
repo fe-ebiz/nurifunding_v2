@@ -1,0 +1,31 @@
+메인은 index.html 만 함
+
+autoinv : 선정산 상품 자동 투자
+componets -> popup으로 이동
+etc : pdf
+faq : 누리펀딩FAQ
+invest : 투자상품
+join : 회원가입 
+loan : 대출 / 금리 한도 조회
+login : 로그인 / 비밀번호재설정
+mailTemplate
+miripay : 미리페이
+modal 
+mydeposit : 나의 거래내역
+myinvest : 나의 투자
+mypage : 나의 정보
+myrepay : 나의 예치금&지급스케쥴
+notice : 공지사항
+nuripay -> miripaySite : 미리페이 사이트 / 후순위 담보대출 사이트
+policy : 투자이용약관, 개인정보취급방침
+service : 소개
+
+===========================
+<popup>
+
+autoinv : 선정산 상품 자동 투자
+account : 예치금 계좌 발급받기
+main > eventWinner : 이벤트 당첨자 발표
+main > phishingPop : 피싱 출금제한 안내
+invest > invest04 : 투자하기
+invest > mCerti : 자동투자
