@@ -6,6 +6,7 @@ $(function () {
     quicknoticeFn();
     rateCountFn();
     primaryBnrFn();
+    ingProductFn();
 
     //이미지로드 지연 - 로딩속도 단축
     /*$("img.lazy").lazyload({
@@ -17,7 +18,6 @@ $(function () {
         var winWidth = $(window).width();
         // console.log(winWidth)
         if (winWidth <= 991) {
-            ingProductFn();
             benefitChart("#per-chart", "11");
         }
         if (winWidth >= 992) {
@@ -41,23 +41,53 @@ function sliderFn() {
 // 진행중인 상품 영역 - 모바일
 function ingProductFn() {
     var ipSwiper = new Swiper('.ip-container', {
-        autoplay: {
-            delay: 8000,
-        },
-        slidesPerView: 'auto',
-        spaceBetween: 15,
-        centeredSlides: true,
+        slidesPerView: 3,
         pagination: {
             el: '.swiper-pagination',
             type: 'fraction',
         },
-    });
-    $(window).resize(function () {
-        var winWidth = $(window).width();
-        if (winWidth >= 992) {
-            ipSwiper.destroy();
+        breakpoints: {
+            992: {
+                autoplay: {
+                    delay: 8000,
+                },
+                slidesPerView: 'auto',
+                spaceBetween: 15,
+                centeredSlides: true,
+                pagination: {
+                    el: '.swiper-pagination',
+                    type: 'fraction',
+                },
+            }
         }
     });
+    // var ipSwiper = null;
+    // $(window).resize(function () {
+    //     var winWidth = $(window).width();
+    //     if (winWidth <= 992) {
+    //         if (ipSwiper = null) {
+    //             ipSwiper = new Swiper('.ip-container', {
+    //                 autoplay: {
+    //                     delay: 8000,
+    //                 },
+    //                 slidesPerView: 'auto',
+    //                 spaceBetween: 15,
+    //                 centeredSlides: true,
+    //                 pagination: {
+    //                     el: '.swiper-pagination',
+    //                     type: 'fraction',
+    //                 },
+    //             });
+    //         }
+    //     }
+    //     if (winWidth >= 992) {
+    //         if (ipSwiper != null) {
+    //             ipSwiper.destroy();
+    //             ipSwiper = null;
+    //         }
+    //     }
+    // });
+
 }
 // 퀵바 공지
 function quicknoticeFn() {

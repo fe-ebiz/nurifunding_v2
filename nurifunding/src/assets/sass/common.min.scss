@@ -11,6 +11,8 @@
 @import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
 @import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');*/
 
+@import './parts/variables';
+@import './parts/mixins';
 @import './base';
 @import './override';
 @import './grid';
@@ -80,6 +82,22 @@ body {
             padding-left: 15px;
             background: #ffffff;
             z-index: 1;
+            box-sizing: border-box;
+            width: 100%;
+            transition: box-shadow 1s;
+            -webkit-transition: box-shadow 1s;
+
+            .menu2 {
+                a {
+                    &:active {
+                        color: $primary-color;
+                    }
+                }
+            }
+
+            &.on {
+                box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .1);
+            }
 
             >div {
                 position: relative;
@@ -109,13 +127,195 @@ body {
                     }
                 }
             }
+
+            .nav-tab {
+                position: absolute;
+                left: 0px;
+                top: 6px;
+
+                .icon-bar {
+                    display: block;
+                    width: 20px;
+                    height: 2px;
+                    background: #000;
+                }
+
+                .b2 {
+                    margin-top: 5px;
+                }
+
+                .b3 {
+                    margin-top: 5px;
+                }
+            }
+
+            .my-tab {
+                position: absolute;
+                right: 0px;
+                top: 4px;
+                width: 22px;
+
+                img {
+                    width: 100%;
+                }
+            }
+
+            .navbar-collapse {
+                display: block !important;
+                position: fixed;
+                width: 285px;
+                height: 100%;
+                top: 0;
+                left: -285px;
+                background: #fff;
+                transition: left .3s;
+                -webkit-transition: left .3s;
+
+                .nc-header {
+                    position: relative;
+                    background: $primary-color;
+                    padding: 15px 0px 20px 20px;
+
+                    .nc-logo {
+                        img {
+                            width: 150px;
+                        }
+                    }
+
+                    .cls-btn {
+                        position: relative;
+                        top: 0px;
+                        right: 15px;
+                        float: right;
+
+                        img {
+                            width: 26px;
+                        }
+                    }
+
+                    .nc-login {
+                        margin-top: 10px;
+                        color: #fff;
+                        font-size: 14px;
+                        line-height: 1.5em;
+
+                        p {
+                            position: relative;
+                            letter-spacing: 0;
+                        }
+
+                        .lgout {
+                            position: absolute;
+                            right: 15px;
+                            bottom: 0;
+
+                            .img-lock {
+                                position: relative;
+                                top: -2px;
+                                width: 28px;
+                                vertical-align: middle;
+                                margin-left: 3px;
+                            }
+                        }
+
+                        a {
+                            letter-spacing: 0;
+                        }
+
+                        p.nth-3 {
+                            margin-top: 10px;
+
+                            a {
+                                display: inline-block;
+                                color: #fff;
+                                padding: 2px 4px;
+                                text-align: center;
+                                border: 1px solid #fff;
+                                font-size: 13px;
+                            }
+
+                            a.nth-2 {
+                                margin-left: 3px;
+                            }
+                        }
+                    }
+                }
+
+                .nc-login {
+                    position: relative;
+                }
+
+                .menu {
+                    position: relative;
+                }
+
+                &.on {
+                    left: 0px;
+                }
+            }
+
+
+            .menu {
+                background: #fff;
+                overflow-y: auto;
+
+                >li {
+                    position: relative;
+                    border-bottom: 1px solid #ddd;
+
+                    >a {
+                        display: block;
+                        padding: 15px 20px 15px 20px;
+                        color: #333;
+                        letter-spacing: 0;
+
+                        >img {
+                            position: absolute;
+                            width: 9px;
+                            right: 20px;
+                            top: 16px;
+                        }
+                    }
+
+                    &:hover {
+                        .menu2 {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .menu2 {
+                display: none;
+                position: relative;
+                width: 100%;
+                border-top: 1px solid #ddd;
+                padding: 0 !important;
+                min-height: auto !important;
+
+                a {
+                    display: block;
+                    margin: 0 auto;
+                    font-size: 15px;
+                    padding: 10px 0 10px 30px;
+                    background: #e7e7e7;
+                    border-top: 1px solid #fff;
+
+                    &:hover {
+                        color: $primary-color;
+                    }
+                }
+
+                li {
+                    &:first-child {
+                        a {
+                            border-top: none;
+                        }
+                    }
+                }
+            }
         }
 
-        .topbn.fixed {
-            position: fixed;
-            width: 100%;
-            left: 0;
-        }
 
         .topbn {
             top: 48px;
@@ -131,216 +331,18 @@ body {
                     margin: 0 auto;
                 }
             }
-        }
 
-        .topbn.relat {
-            position: relative;
-        }
-    }
-
-    .gnb {
-        box-sizing: border-box;
-        width: 100%;
-        transition: box-shadow 1s;
-        -webkit-transition: box-shadow 1s;
-
-        .menu2 {
-            a {
-                &:active {
-                    color: #398fe1;
-                }
-            }
-        }
-    }
-
-    .gnb.on {
-        box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .1);
-    }
-
-    .nav-tab {
-        position: absolute;
-        left: 0px;
-        top: 6px;
-
-        .icon-bar {
-            display: block;
-            width: 20px;
-            height: 2px;
-            background: #000;
-        }
-
-        .b2 {
-            margin-top: 5px;
-        }
-
-        .b3 {
-            margin-top: 5px;
-        }
-    }
-
-    .my-tab {
-        position: absolute;
-        right: 0px;
-        top: 4px;
-        width: 22px;
-
-        img {
-            width: 100%;
-        }
-    }
-
-    .navbar-collapse {
-        display: block !important;
-        position: fixed;
-        width: 285px;
-        height: 100%;
-        top: 0;
-        left: -285px;
-        background: #fff;
-        transition: left .3s;
-        -webkit-transition: left .3s;
-
-        .nc-header {
-            position: relative;
-            background: #398fe1;
-            padding: 15px 0px 20px 20px;
-
-            .nc-logo {
-                img {
-                    width: 150px;
-                }
+            &.fixed {
+                position: fixed;
+                width: 100%;
+                left: 0;
             }
 
-            .cls-btn {
+            &.relat {
                 position: relative;
-                top: 0px;
-                right: 15px;
-                float: right;
-
-                img {
-                    width: 26px;
-                }
-            }
-
-            .nc-login {
-                margin-top: 10px;
-                color: #fff;
-                font-size: 14px;
-                line-height: 1.5em;
-
-                p {
-                    position: relative;
-                    letter-spacing: 0;
-                }
-
-                .lgout {
-                    position: absolute;
-                    right: 15px;
-                    bottom: 0;
-
-                    .img-lock {
-                        position: relative;
-                        top: -2px;
-                        width: 28px;
-                        vertical-align: middle;
-                        margin-left: 3px;
-                    }
-                }
-
-                a {
-                    letter-spacing: 0;
-                }
-
-                p.nth-3 {
-                    margin-top: 10px;
-
-                    a {
-                        display: inline-block;
-                        color: #fff;
-                        padding: 2px 4px;
-                        text-align: center;
-                        border: 1px solid #fff;
-                        font-size: 13px;
-                    }
-
-                    a.nth-2 {
-                        margin-left: 3px;
-                    }
-                }
             }
         }
 
-        .nc-login {
-            position: relative;
-        }
-
-        .menu {
-            position: relative;
-        }
-    }
-
-    .navbar-collapse.on {
-        left: 0px;
-    }
-
-    .menu {
-        background: #fff;
-        overflow-y: auto;
-
-        >li {
-            position: relative;
-            border-bottom: 1px solid #ddd;
-
-            >a {
-                display: block;
-                padding: 15px 20px 15px 20px;
-                color: #333;
-                letter-spacing: 0;
-
-                >img {
-                    position: absolute;
-                    width: 9px;
-                    right: 20px;
-                    top: 16px;
-                }
-            }
-
-            &:hover {
-                .menu2 {
-                    display: block;
-                }
-            }
-        }
-    }
-
-    .menu2 {
-        display: none;
-        position: relative;
-        width: 100%;
-        border-top: 1px solid #ddd;
-        padding: 0 !important;
-        min-height: auto !important;
-
-        a {
-            display: block;
-            margin: 0 auto;
-            font-size: 15px;
-            padding: 10px 0 10px 30px;
-            background: #e7e7e7;
-            border-top: 1px solid #fff;
-
-            &:hover {
-                color: #398fe1;
-            }
-        }
-
-        li {
-            &:first-child {
-                a {
-                    border-top: none;
-                }
-            }
-        }
     }
 
     .footer {
@@ -420,7 +422,7 @@ body {
                 top: 1px;
                 margin-left: 8px;
                 font-size: 22px;
-                color: #398fe1;
+                color: $primary-color;
             }
 
             .s-3 {
@@ -561,231 +563,422 @@ body {
     .header {
         font-family: 'Noto Sans KR', sans-serif;
         z-index: 11;
-        height: 90px;
+        height: $hd-ht-pc;
         position: relative;
-    }
 
-    .gnb {
-        z-index: 11;
-        height: 90px;
-        position: fixed;
-        left: 0;
-        width: 100%;
-        background: #fff;
-        transition: box-shadow 1s;
-
-        >.inner {
-            height: 100%;
-            position: relative;
-        }
-
-        .navbar-header {
-            position: absolute;
+        .gnb {
+            z-index: 11;
+            height: $hd-ht-pc;
+            position: fixed;
             left: 0;
-            top: 25px;
+            width: 100%;
+            background: #fff;
+            transition: box-shadow 1s;
+            $menu-pd-x: 30px;
 
-            .navbar-brand {
+            >.inner {
+                height: 100%;
                 position: relative;
-                display: inline-block;
-                width: 200px;
             }
-        }
 
-        .navbar-collapse {
-            position: relative;
-            float: right;
-            height: 100%;
-
-            .menu {
+            .navbar-header {
                 position: relative;
-                font-size: 0;
+                float: left;
+                @include va-bef(100%);
 
-                >li {
+                .navbar-brand {
                     display: inline-block;
-                    position: relative;
-                    vertical-align: middle;
-                    font-size: 15px;
-                    text-align: center;
+                    width: 200px;
+                }
+            }
 
-                    &:first-child {
-                        margin-left: 0;
+            .util {
+                float: right;
+
+                .btn-cover {
+                    display: inline-block;
+                    @include va-bef($hd-ht-pc);
+
+                    &+.btn-cover {
+                        margin-left: 7px;
                     }
 
-                    >a {
-                        display: inline-block;
-                        position: relative;
-                        height: 100%;
-                        padding: 0px 15px;
-                        box-sizing: border-box;
-                        letter-spacing: 0;
-
-                        &:before {
-                            content: '';
-                            display: inline-block;
-                            vertical-align: middle;
-                            height: 90px;
+                    &.myinfo {
+                        &+.btn-cover {
+                            margin-left: 15px;
                         }
 
-                        .icon {
-                            width: 22px;
-                            vertical-align: text-bottom;
-                            margin-right: 5px;
-                        }
-                    }
+                        // .menu2 {
+                        //     >li>a {
+                        //         padding-left: 0 !important;
+                        //     }
+                        // }
 
-                    >a.btn-cmm {
-                        display: block;
-                        width: 84px;
-                        height: 39px;
-                        padding: 0px;
-                        box-sizing: border-box;
-                        border-radius: 3px;
-                        line-height: 39px;
-                        text-align: center;
-
-                        &:before {
-                            display: none;
-                        }
-                    }
-
-                    >a.btn-cmm.btn-white {
-                        border: 1px solid #398fe1;
-                        background: #fff;
-                        color: #398fe1;
-                    }
-
-                    >a.btn-cmm.btn-blue {
-                        border: 1px solid #398fe1;
-                        background: #398fe1;
-                        color: #fff;
-                    }
-
-                    >a.btn-cmm.login {
-                        margin-left: 15px;
-                    }
-
-                    &:hover {
-                        >a {
+                        &:hover {
                             &:after {
                                 content: '';
                                 position: absolute;
                                 left: 0;
                                 bottom: 0px;
                                 width: 100%;
-                                border-bottom: 4px solid #398fe1;
+                                border-bottom: 4px solid $primary-color;
+                            }
+                        }
+
+                        &.on {
+                            >a {
+                                color: $primary-color;
                             }
                         }
                     }
+
+                    .myinfo-btn {
+                        font-size: 16px;
+                        font-weight: 400;
+
+                        .icon {
+                            position: relative;
+                            top: -2px;
+                            margin-right: 5px;
+                            width: 17px;
+                            vertical-align: middle;
+                        }
+                    }
+
+                    .btn-cmm {
+                        position: relative;
+                        top: -1px;
+                        display: inline-block;
+                        width: 76px;
+                        height: 30px;
+                        padding: 0px;
+                        box-sizing: border-box;
+                        border-radius: 2px;
+                        font-size: 14px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        text-align: center;
+
+                        &:before {
+                            display: none;
+                        }
+
+                        &.btn-white {
+                            border: 1px solid $primary-color;
+                            background: #fff;
+                            color: $primary-color;
+                        }
+
+                        &.btn-blue {
+                            border: 1px solid $primary-color;
+                            background: $primary-color;
+                            color: #fff;
+                        }
+                    }
+
                 }
 
-                .hidden-margin {
-                    margin-left: 0;
-                    width: 40px;
-                    height: 10px;
+            }
+
+            .navbar-collapse {
+                position: relative;
+                float: left;
+                width: calc(100% - 200px);
+                height: 100%;
+
+                .menu {
+                    position: relative;
+                    display: inline-block;
+                    margin-left: 80px;
+                    height: 100%;
+                    font-size: 0;
+
+                    >li {
+                        position: relative;
+                        // float: left;
+                        display: inline-block;
+                        margin: 0px $menu-pd-x;
+                        @include va-bef(100%, 20px);
+                        text-align: center;
+
+                        // &:first-child {
+                        //     margin-left: 0;
+                        // }
+
+                        >a:not(.btn-cmm) {
+                            // @include va-bef-this($hd-ht-pc, $hd-ht-pc + 3, 20px);
+                            box-sizing: border-box;
+                            font-weight: 500;
+                            letter-spacing: 0;
+                        }
+
+                        &:hover {
+                            &:after {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                bottom: 0px;
+                                width: 100%;
+                                border-bottom: 4px solid $primary-color;
+                            }
+                        }
+
+                        &.on {
+                            >a {
+                                color: $primary-color;
+                            }
+                        }
+
+
+                        &:hover {
+                            .menu2.big {
+                                display: block;
+                            }
+                        }
+
+
+                        .menu2.big {
+                            display: none;
+                            position: absolute;
+                            padding-top: 50px !important;
+                            left: -210px;
+                            text-align: left;
+
+                            .menu2big-item {
+                                position: relative;
+                                float: left;
+                                font-weight: 400;
+
+                                .c-1 {
+                                    color: #4c00cb;
+                                }
+                            }
+
+                            .menu2big-item.item-1 {
+                                font-size: 22px;
+                                color: #555;
+                                font-weight: 700;
+                            }
+
+                            .menu2big-item.item-2 {
+                                margin-left: 30px;
+                                font-size: 15px;
+                                word-break: keep-all;
+                                letter-spacing: normal;
+                                line-height: 1.47;
+                            }
+
+                            .menu2big-item.item-3 {
+                                width: 60px;
+                                margin-left: 35px;
+                                height: 60px;
+                                background-color: $primary-color;
+                                color: #fff;
+                                border-radius: 50%;
+                                font-size: 14px;
+                                text-align: center;
+
+                                >span {
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    position: relative;
+                                    left: -2px;
+                                    line-height: 1.2;
+
+                                    &:after {
+                                        content: '▶';
+                                        position: absolute;
+                                        top: 50%;
+                                        margin-top: -5px;
+                                        margin-left: 3px;
+                                        font-family: 'Nanum Gothic', sans-serif;
+                                        font-size: 10px;
+                                        transform: scale(0.85);
+                                    }
+                                }
+
+                                &:after {
+                                    display: inline-block;
+                                    vertical-align: middle;
+                                    content: '';
+                                    height: 60px;
+                                }
+                            }
+                        }
+                    }
+
+                    // .hidden-margin {
+                    //     margin-left: 0;
+                    //     width: 40px;
+                    //     height: 10px;
+                    // }
+
+                    // .hidden-margin+li {
+                    //     margin-left: 0;
+                    // }
+
+                    // >li.btn+li.btn {
+                    //     margin-left: 8px;
+                    // }
+
+                    // >li.big {
+                    //     padding: 0;
+                    //     position: static;
+                    //     font-size: 22px;
+                    //     font-weight: 700;
+                    // }
                 }
 
-                .hidden-margin+li {
-                    margin-left: 0;
+                .menu.status-login {
+                    .hidden-margin {
+                        width: 111px;
+                    }
+                }
+            }
+
+            // .sub-navbar {
+            //     .menu2 {
+            //         >li {
+            //             >a {
+            //                 &:active {
+            //                     color: $primary-color;
+            //                 }
+            //             }
+            //         }
+            //     }
+            // }
+
+            .menu2 {
+                display: none;
+                position: absolute;
+                z-index: 1;
+                width: 100%;
+                padding: 0px 0;
+                line-height: 1.4;
+                text-align: center;
+
+                [class*=vline-] {
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    border-right: 1px solid #ddd;
                 }
 
-                >li.btn+li.btn {
-                    margin-left: 8px;
+                .vline-1 {
+                    background-repeat: 1px solid #ddd;
                 }
 
-                >li.big {
-                    padding: 0;
-                    position: static;
-                    font-size: 22px;
-                    font-weight: 700;
+                .vline-2 {
+                    border-left: 1px solid #ddd;
                 }
 
-                >li.btn {
-                    padding: 0;
+                >li {
+                    position: relative;
+                    text-align: left;
+                    margin-top: 10px;
 
-                    >a {
-                        &:after {
+                    &:first-child {
+                        margin-left: 0;
+                        margin-top: 0;
+
+                        &:before {
                             display: none;
                         }
                     }
-                }
 
-                >li.myinfo {
                     >a {
-                        padding-left: 25px;
-                        padding-right: 25px;
-                    }
-                }
+                        display: inline-block;
+                        width: 100%;
+                        // padding: 3px 0 3px $menu-pd-x;
+                        // padding-left: $menu-pd-x;
+                        box-sizing: border-box;
+                        // font-size: 15px;
+                        font-size: 14px;
+                        color: #555;
+                        font-weight: 300;
+                        white-space: nowrap;
+                        cursor: pointer;
 
-                >li.on {
-                    >a {
-                        color: #398fe1;
+                        &:hover {
+                            color: $primary-color;
+                        }
                     }
                 }
             }
 
-            .menu.status-login {
-                .hidden-margin {
-                    width: 111px;
-                }
+            .menu2.on {
+                display: block;
             }
-        }
 
-        .menu {
-            >li {
-                .menu2.big {
+            .menu2-bg {
+                display: none;
+                position: fixed;
+                top: $hd-ht-pc;
+                left: 0;
+                width: 100%;
+                // min-height: 40px;
+                // padding: 10px 0;
+                padding-top: 25px;
+                border-top: 1px solid #ddd;
+                background: #f9f9f9;
+                // box-sizing: border-box;
+                // border-bottom: 1px solid #222;
+                // box-shadow: 0px 10px 10px 0 rgba(0, 0, 0, 0.15);
+                box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
+                line-height: 1.4;
+
+                .autoinv-box {
                     display: none;
-                    position: absolute;
-                    padding-top: 50px !important;
-                    left: -210px;
-                    text-align: left;
+                    position: relative;
+                    width: 570px;
+                    height: 120px;
+                    margin: 15px 0 0 100px;
+                    padding: 25px 25px;
+                    background-color: #fff;
+                    border: 1px dashed #ddd;
 
-                    .menu2big-item {
+                    .autoinv-item {
                         position: relative;
                         float: left;
-                        font-weight: 400;
 
-                        .c-1 {
-                            color: #4c00cb;
+                        em {
+                            font-weight: 500;
                         }
                     }
 
-                    .menu2big-item.item-1 {
-                        font-size: 22px;
-                        color: #555;
-                        font-weight: 700;
+                    .autoinv-item.item-1 {
+                        .autoinv-tit {
+                            font-size: 20px;
+                            color: $primary-color;
+                            line-height: 1;
+                        }
+
+                        .autoinv-txt {
+                            font-size: 14px;
+                            margin-top: 5px;
+                        }
                     }
 
-                    .menu2big-item.item-2 {
-                        margin-left: 30px;
-                        font-size: 15px;
-                        word-break: keep-all;
-                        letter-spacing: normal;
-                        line-height: 1.47;
-                    }
-
-                    .menu2big-item.item-3 {
-                        width: 60px;
-                        margin-left: 35px;
+                    .autoinv-item.item-2 {
+                        float: right;
+                        top: 3px;
+                        width: 110px;
                         height: 60px;
-                        background-color: #398fe1;
+                        background-color: #FF9A00;
+                        border-radius: 4px;
                         color: #fff;
-                        border-radius: 50%;
                         font-size: 14px;
                         text-align: center;
 
                         >span {
                             display: inline-block;
                             vertical-align: middle;
-                            position: relative;
-                            left: -2px;
-                            line-height: 1.2;
 
                             &:after {
                                 content: '▶';
-                                position: absolute;
-                                top: 50%;
-                                margin-top: -5px;
-                                margin-left: 3px;
+                                position: relative;
+                                top: -3px;
+                                left: 5px;
                                 font-family: 'Nanum Gothic', sans-serif;
                                 font-size: 10px;
                                 transform: scale(0.85);
@@ -801,174 +994,23 @@ body {
                     }
                 }
 
-                .menu2 {
-                    display: none;
+                .autoinv-box.on {
+                    display: block;
                 }
 
-                &:hover {
-                    .menu2.big {
-                        display: block;
-                    }
-                }
-
-                .menu2.on {
+                &.on {
                     display: block;
                 }
             }
-        }
 
-        .menu2 {
-            position: absolute;
-            z-index: 1;
-            width: 100%;
-            padding: 0px 0;
-            line-height: 1.4;
-            text-align: center;
 
-            [class*=vline-] {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                border-right: 1px solid #ddd;
-            }
-
-            .vline-2 {
-                border-left: 1px solid #ddd;
-            }
-
-            >li {
-                position: relative;
-                text-align: left;
-
-                &:first-child {
-                    margin-left: 0;
-
-                    &:before {
-                        display: none;
-                    }
-                }
-
-                >a {
-                    display: inline-block;
-                    width: 100%;
-                    padding: 3px 10px;
-                    font-size: 15px;
-                    color: #555;
-                    font-weight: 300;
-                    cursor: pointer;
-
-                    &:hover {
-                        color: #398fe1;
-                    }
-                }
+            &.on {
+                box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .1);
             }
         }
 
-        .sub-navbar {
-            .menu2 {
-                >li {
-                    >a {
-                        &:active {
-                            color: #398fe1;
-                        }
-                    }
-                }
-            }
-        }
-
-        .menu2-bg {
-            .autoinv-box {
-                display: none;
-                position: relative;
-                width: 570px;
-                height: 120px;
-                margin: 15px 0 0 100px;
-                padding: 25px 25px;
-                background-color: #fff;
-                border: 1px dashed #ddd;
-
-                .autoinv-item {
-                    position: relative;
-                    float: left;
-
-                    em {
-                        font-weight: 500;
-                    }
-                }
-
-                .autoinv-item.item-1 {
-                    .autoinv-tit {
-                        font-size: 20px;
-                        color: #398fe1;
-                        line-height: 1;
-                    }
-
-                    .autoinv-txt {
-                        font-size: 14px;
-                        margin-top: 5px;
-                    }
-                }
-
-                .autoinv-item.item-2 {
-                    float: right;
-                    top: 3px;
-                    width: 110px;
-                    height: 60px;
-                    background-color: #FF9A00;
-                    border-radius: 4px;
-                    color: #fff;
-                    font-size: 14px;
-                    text-align: center;
-
-                    >span {
-                        display: inline-block;
-                        vertical-align: middle;
-
-                        &:after {
-                            content: '▶';
-                            position: relative;
-                            top: -3px;
-                            left: 5px;
-                            font-family: 'Nanum Gothic', sans-serif;
-                            font-size: 10px;
-                            transform: scale(0.85);
-                        }
-                    }
-
-                    &:after {
-                        display: inline-block;
-                        vertical-align: middle;
-                        content: '';
-                        height: 60px;
-                    }
-                }
-            }
-
-            display: none;
-            padding: 10px 0;
-            border-top: 1px solid #ddd;
-            position: fixed;
-            left: 0;
-            width: 100%;
-            min-height: 40px;
-            background: #f9f9f9;
-            border-bottom: 1px solid #222;
-            box-shadow: 0 1px 1px rgba(0, 0, 0, .1);
-            line-height: 1.4;
-
-            .autoinv-box.on {
-                display: block;
-            }
-        }
-
-        .menu2-bg.on {
-            display: block;
-        }
     }
 
-    .gnb.on {
-        box-shadow: 0 1px 2px 1px rgba(0, 0, 0, .1);
-    }
 
     .footer {
         font-family: 'Noto Sans KR', sans-serif;
@@ -1053,7 +1095,7 @@ body {
                 font-size: 25px;
                 letter-spacing: -1px;
                 margin-left: 10px;
-                color: #398fe1;
+                color: $primary-color;
                 font-size: 30px;
                 top: 2px;
             }
@@ -1159,34 +1201,24 @@ body {
 }
 
 @media (min-width: 992px) and (max-width: 1119px) {
-    .gnb {
-        padding: 0 10px;
+    .header {
+        .gnb {
+            // padding: 0 10px;
 
-        .navbar-collapse {
-            .menu.status-login {
-                .hidden-margin {
-                    width: auto;
+            .navbar-collapse {
+                width: calc(100% - 210px);
+
+                .menu {
+                    margin-left: 5%;
+
+                    >li {
+                        margin: 0 2%;
+
+                        >a {
+                            font-size: 16px;
+                        }
+                    }
                 }
-            }
-
-            .menu {
-                .hidden-margin {
-                    width: auto;
-                }
-            }
-        }
-
-        .menu {
-            >li {
-                .menu2.big {
-                    display: none !important;
-                }
-            }
-        }
-
-        .menu2-bg {
-            .autoinv-box {
-                display: none !important;
             }
         }
     }

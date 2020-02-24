@@ -49,7 +49,7 @@ table {
 
 /* custom reset */
 img{ max-width:100%; }/*ipad사이즈에서 userlogin 의 title등 %로 된  것을 위해*/
-li img, dd img { vertical-align:top; }
+/* li img, dd img { vertical-align:top; } */
 input { vertical-align:middle; }
 
 .hide {display: none !important;}
