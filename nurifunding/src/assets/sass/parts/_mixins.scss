@@ -173,7 +173,7 @@
     }
 }
 
-@mixin va-bef-this ($ht: null, $bef-ht: 100%, $fz: inherit) {
+@mixin va-bef-this ($ht: null, $fz: inherit, $bef-ht: 100%) {
     position: relative;
     height: $ht;
     display: inline-block;
@@ -528,7 +528,16 @@
     }
 }
 
-@mixin simple-btn($ht: 30px, $pd: null, $fz: null) {
+@mixin simple-btn($pd: null, $fz: null, $bgc: null, $c: null, $b-r: 0) {
+    display: inline-block;
+    padding: $pd;
+    font-size: $fz;
+    background-color: $bgc;
+    color: $c;
+    border-radius: $b-r;
+}
+
+@mixin simple-btn-lh($ht: 30px, $pd: null, $fz: null) {
     display: inline-block;
     height: $ht;
     line-height: $ht;

@@ -271,7 +271,6 @@
     /* .faq {padding: 30px 0px 45px; background: #E1F3FF;} */
     .ingProduct {
         padding: 35px 0;
-        background: #f5f5f5;
 
         h1 {
             .more-btn {
@@ -383,6 +382,18 @@
                         text-align: center;
                         font-size: 14px;
                         color: #fff;
+
+                        &.estate {
+                            background: #0074e2;
+                        }
+
+                        &.miri {
+                            background: #152475;
+                        }
+
+                        &.nuri {
+                            background: #00cc99;
+                        }
                     }
 
                     .status {
@@ -403,7 +414,8 @@
                     padding: 20px 15px 15px;
                     line-height: 1.4;
                     font-size: 15px;
-                    color: #09345f;
+                    // color: #09345f;
+                    color: #333;
                     font-weight: 500;
                 }
 
@@ -518,7 +530,7 @@
             .ip-outer.start {
                 .ip-top {
                     .pdt-no {
-                        background: #152475;
+                        // background: #152475;
                     }
 
                     .status {
@@ -534,7 +546,7 @@
             .ip-outer.wait {
                 .ip-top {
                     .pdt-no {
-                        background: #2736a8;
+                        // background: #2736a8;
                     }
 
                     .status {
@@ -550,7 +562,7 @@
             .ip-outer.end {
                 .ip-top {
                     .pdt-no {
-                        background: #7840d6;
+                        // background: #7840d6;
                     }
                 }
 
@@ -601,22 +613,30 @@
         }
     }
 
-    .ingProduct.nuriword {
-        background-color: #fff;
+    .ingProduct.type1 {
+        .ip-wrap {
+            .ip-outer {}
+        }
+    }
 
+    .ingProduct.type2 {
         .ip-wrap {
             .ip-outer {
                 .ip-top {
                     position: absolute;
                     top: 0;
                     left: 0;
-
-                    .pdt-no {
-                        background: #00cc99;
-                    }
                 }
             }
         }
+    }
+
+    .ingProduct.invest {
+        background: #f0f0f0;
+    }
+
+    .ingProduct.nuriword {
+        background-color: #fff;
     }
 
     .ip-container.swiper-container {
@@ -1500,22 +1520,6 @@
         display: block;
     }
 
-    /* .main-box.swiper-container {position: relative;  padding: 0 0px; margin: 0 auto; text-align: center;} */
-    /* .main-box .swiper-slide.bg-1 {background: url('https://nurifunding.co.kr/img/renew/main/m_bnr_bg.jpg') no-repeat center;} */
-    /* .ingProduct .inner {overflow: hidden;} */
-    /* .ingProduct .ip-wrap .ip-outer .ip-box:hover {box-shadow: 0px 5px 20px 0 rgba(0, 0, 0, 0.25);} */
-    /* .ingProduct .ip-wrap .ip-outer .bg-cover .tbl .row {display: table-row;} */
-    /* .benefit .split.split-1 {margin-top: -10px;} */
-    /* .benefit .split.split-2 .per-chart .box {display: inline-block; position: relative; width: 110px; vertical-align: bottom;} */
-    /* .benefit .split.split-2 .per-chart .box.nth-1 .p-chart {height: 32px;}
-	.benefit .split.split-2 .per-chart .box.nth-2 .p-chart {height: 42px;}
-	.benefit .split.split-2 .per-chart .box.nth-3 .p-chart {height: 115px;}
-	.benefit .split.split-2 .per-chart .box.nth-4 .p-chart {height: 220px;} */
-    /* .faq {padding: 100px 0 90px; background: #dae7f3;} */
-    /* .faq {padding: 100px 0 90px; background: #E1F3FF;} */
-    /* .faq .inner {overflow: hidden;} */
-    /* 180510_코스닥 벤처펀딩_다솜 */
-    /* 180625_수익률 하단 텍스트 추가_다솜 */
     .visual {
         position: relative;
         width: 100%;
@@ -1523,7 +1527,7 @@
 
         .main-box.swiper-container {
             position: relative;
-            min-width: 1100px;
+            // min-width: 1100px;
             padding: 0 0px;
             margin: 0 auto;
             text-align: center;
@@ -1536,6 +1540,18 @@
                 height: 520px;
                 padding-bottom: 150px;
                 box-sizing: content-box;
+
+                .picture {
+                    height: 100%;
+
+                    .pc-img {
+                        position: absolute;
+                        width: 1100px;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                    }
+                }
             }
 
             .certi-list {
@@ -1548,17 +1564,6 @@
                 >li {
                     &:first-child {
                         margin-bottom: 10px;
-                    }
-                }
-            }
-        }
-
-        .visual {
-            .main-box {
-                .swiper-slide {
-                    img {
-                        display: block;
-                        margin: 0 auto;
                     }
                 }
             }
@@ -1728,7 +1733,11 @@
 
     .ingProduct {
         padding: 75px 0px;
-        background: #f0f0f0;
+
+        .inner {
+            padding-left: 0;
+            padding-right: 0;
+        }
 
         h1 {
             .more-btn {
@@ -1782,6 +1791,7 @@
                 .ip-box {
                     position: relative;
                     margin: 0 auto;
+                    padding-bottom: 25px;
                     background: #fff;
                     border: 1px solid #ddd;
                     border-radius: 10px;
@@ -1795,7 +1805,8 @@
                 }
 
                 .thumb-box {
-                    height: 217px;
+                    height: 210px;
+                    border-top-right-radius: 10px;
 
                     .thumb-text-wrapper {
                         position: absolute;
@@ -1829,7 +1840,7 @@
                 }
 
                 .ip-top {
-                    padding-right: 25px;
+                    padding-right: 20px;
                     font-size: 15px;
 
                     >* {
@@ -1838,13 +1849,64 @@
 
                     .pdt-no {
                         display: inline-block;
-                        width: 80px;
-                        height: 36px;
+                        // width: 80px;
+                        // height: 36px;
+                        // line-height: 36px;
+                        // font-size: 17.5px;
+                        @include sizes(50px);
+                        padding: 9px 0;
+                        box-sizing: border-box;
                         border-bottom-right-radius: 5px;
-                        line-height: 36px;
+                        font-size: 14px;
+                        line-height: 1.2;
                         text-align: center;
-                        font-size: 17.5px;
                         color: #fff;
+
+                        &.estate {
+                            background: #0074e2;
+                        }
+
+                        &.miri {
+                            background: #152475;
+                        }
+
+                        &.nuri {
+                            background: #00cc99;
+                        }
+                    }
+
+                    .badge-wrapper {
+                        position: absolute;
+                        top: 10px;
+                        right: 10px;
+
+                        .badge {
+                            display: inline-block;
+                            min-width: 60px;
+                            @include va-bef(30px, 14px);
+                            box-sizing: border-box;
+                            padding: 0 8px;
+                            border-radius: 5px;
+                            background-color: #fff;
+                            color: $primary-color;
+                            text-align: center;
+
+                            &+.badge {
+                                margin-left: 3px;
+                            }
+
+                            &.date-badge {}
+
+                            &.auto-badge {
+                                background-color: #3034d9;
+                                color: #fff;
+
+                                .icon {
+                                    height: 22px;
+                                    margin-right: 3px;
+                                }
+                            }
+                        }
                     }
 
                     .status {
@@ -1861,10 +1923,14 @@
                 }
 
                 .iph3 {
+                    min-height: 85px;
                     padding: 25px 20px;
-                    line-height: 1.4;
-                    font-size: 20px;
-                    color: #09345f;
+                    box-sizing: border-box;
+                    line-height: 1.35;
+                    // font-size: 20px;
+                    // color: #09345f;
+                    font-size: 18px;
+                    color: #333;
                     font-weight: 500;
                 }
 
@@ -1898,16 +1964,20 @@
                 .per-money {
                     margin: 0px 20px 0;
                     font-size: 15px;
+                    color: #888;
                 }
 
+                .per-bar+.per-money,
                 .per-money+.per-bar {
-                    margin-top: 7px;
+                    margin-top: 10px;
                 }
 
                 .per-bar {
                     position: relative;
-                    margin: 15px 20px 0;
-                    height: 25px;
+                    // margin: 15px 20px 0;
+                    // height: 25px;
+                    margin: 0 20px;
+                    height: 6px;
                     background: #ddd;
 
                     .bar {
@@ -1918,14 +1988,27 @@
                     .per {
                         display: block;
                         position: absolute;
-                        top: 0;
-                        width: 100%;
-                        line-height: 25px;
-                        text-align: center;
-                        font-size: 16px;
-                        color: #fff;
-                        letter-spacing: normal;
+                        // top: 0;
+                        // width: 100%;
+                        // line-height: 25px;
+                        // text-align: center;
+                        // font-size: 16px;
+                        // color: #fff;
+                        // letter-spacing: normal;
+                        width: 0;
+                        height: 0;
+                        text-indent: -9999px;
                     }
+                }
+
+                .invest-before {
+                    margin: 0 20px;
+                    height: 32px;
+                    line-height: 32px;
+                    background-color: $primary-color;
+                    border-radius: 30px;
+                    color: #fff;
+                    text-align: center;
                 }
 
                 .row-status {
@@ -1954,6 +2037,12 @@
 
                 .bg-cover {
                     display: none;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(14, 26, 38, .7);
                     border-radius: 10px;
                     border-top-left-radius: 0;
 
@@ -1967,16 +2056,49 @@
                             vertical-align: middle;
                             text-align: center;
 
-                            .in {
+                            >.in {
                                 display: inline-block;
                                 z-index: 1;
-                                width: 180px;
-                                height: 180px;
-                                background: rgba(14, 26, 38, .65);
-                                border-radius: 50%;
-                                line-height: 180px;
-                                font-size: 30px;
-                                color: #fff;
+
+                                .won {
+                                    @include sizes(150px);
+                                    box-sizing: border-box;
+                                    border: 2px solid #fff;
+                                    border-radius: 50%;
+                                    text-align: center;
+
+                                    @include va-bef(150px);
+
+                                    .won-in {
+                                        width: 100%;
+                                        padding-top: 10px;
+                                    }
+
+                                    .bar {
+                                        margin: 12px auto 17px;
+                                        width: 65%;
+                                        height: 2px;
+                                        background-color: #fff;
+                                    }
+
+                                    .big {
+                                        font-size: 25px;
+                                        color: #fff;
+                                    }
+
+                                    .sm {
+                                        font-size: 20px;
+                                        color: #49a6ff;
+                                    }
+                                }
+
+                                .text {
+                                    margin-top: 25px;
+                                    font-size: 16px;
+                                    font-weight: 300;
+                                    color: #fff;
+                                    line-height: 1.7;
+                                }
                             }
                         }
                     }
@@ -1985,9 +2107,9 @@
 
             .ip-outer.start {
                 .ip-top {
-                    .pdt-no {
-                        background: #152475;
-                    }
+                    // .pdt-no {
+                    //     background: #152475;
+                    // }
 
                     .status {
                         color: #1593dc;
@@ -2001,9 +2123,9 @@
 
             .ip-outer.wait {
                 .ip-top {
-                    .pdt-no {
-                        background: #2736a8;
-                    }
+                    // .pdt-no {
+                    //     background: #2736a8;
+                    // }
 
                     .status {
                         color: #1593dc;
@@ -2017,9 +2139,9 @@
 
             .ip-outer.end {
                 .ip-top {
-                    .pdt-no {
-                        background: #7840d6;
-                    }
+                    // .pdt-no {
+                    //     background: #7840d6;
+                    // }
                 }
 
                 .per-bar {
@@ -2037,12 +2159,6 @@
 
                 .bg-cover {
                     display: block;
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    background: rgba(0, 0, 0, .3);
                 }
             }
         }
@@ -2067,22 +2183,33 @@
         }
     }
 
-    .ingProduct.nuriword {
-        background-color: #fff;
+    .ingProduct.type1 {
+        .ip-wrap {
+            .ip-outer {}
+        }
+    }
 
+    .ingProduct.type2 {
         .ip-wrap {
             .ip-outer {
                 .ip-top {
                     position: absolute;
                     top: 0;
                     left: 0;
-
-                    .pdt-no {
-                        background: #00cc99;
-                    }
+                    width: 100%;
+                    padding: 0;
+                    font-size: 14px;
                 }
             }
         }
+    }
+
+    .ingProduct.invest {
+        background: #f0f0f0;
+    }
+
+    .ingProduct.nuriword {
+        background-color: #fff;
     }
 
     .primary-bnr {
@@ -2888,16 +3015,16 @@
     .ingProduct {
         h1 {
             .more-btn {
-                right: 10px;
+                // right: 10px;
             }
         }
 
         .ip-wrap {
             width: auto;
-            margin: 0 -10px;
+            // margin: 0 -10px;
 
             .ip-outer {
-                padding: 0 10px;
+                // padding: 0 10px;
 
                 .ip-top {
                     .status {
