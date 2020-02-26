@@ -62,6 +62,8 @@ body {
 
 /* 해더 푸터 모바일 테블릿 통합 */
 @media (max-width: 991px) {
+    $topbn-ht: 40px;
+
     .header {
         font-family: 'Noto Sans KR', sans-serif;
         z-index: 11;
@@ -69,7 +71,7 @@ body {
         position: relative;
         background: #fff;
         background: #fff;
-        height: 88px;
+        height: $hd-ht-m+$topbn-ht;
 
         .gnb {
             position: fixed;
@@ -571,6 +573,7 @@ body {
                 .bnimg {
                     display: block;
                     width: 320px;
+                    height: $topbn-ht;
                     margin: 0 auto;
                 }
             }
@@ -1379,10 +1382,10 @@ body {
 
     .footer {
         >[class*="-area"] {
-            .inner {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
+            // .inner {
+            //     padding-left: 10px;
+            //     padding-right: 10px;
+            // }
         }
 
         .contact-area {

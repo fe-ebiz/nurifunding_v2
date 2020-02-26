@@ -683,6 +683,20 @@
     border-bottom: none;
 }
 
+@mixin ic-arrow($wd: 7px, $bd-w: 1px, $t: -2px) {
+    position: relative;
+    top: $t;
+    content: "";
+    display: inline-block;
+    width: $wd;
+    height: $wd;
+    border: $bd-w solid #898989;
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
 // custom ui
 @mixin comm-title-xs {
     .sm {

@@ -59,7 +59,7 @@ function template() {
 };
 
 function templateAll() {
-    return src([config.template.src, config.template.parts])
+    return src([config.template.src])
         .pipe(fileinclude({
             prefix: '@@',
             basepath: '@file'

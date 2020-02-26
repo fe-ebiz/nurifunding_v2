@@ -28,8 +28,8 @@ function commonUI() {
     // 해더 기능 
     function hdFn() {
         var winWidth = $(window).width(),
-            winHeight = $(window).height()
-        hd = $("#header"),
+            winHeight = $(window).height(),
+            hd = $("#header"),
             el = hd.children(),
             ht_total = 0;
         // 공통
@@ -161,12 +161,12 @@ function mainUI() {
 
     function init() {
         sliderFn();
+        ingProductFn();
+        quicknoticeFn();
+        primaryBnrFn();
+        rateCountFn();
         firstStep();
         wayP();
-        quicknoticeFn();
-        rateCountFn();
-        primaryBnrFn();
-        ingProductFn();
         $(window).resize(function () {
             var winWidth = $(window).width();
             // console.log(winWidth)
@@ -194,8 +194,7 @@ function mainUI() {
         var ipSwiper = new Swiper('.ip-container', {
             slidesPerView: 3,
             pagination: {
-                el: '.swiper-pagination',
-                type: 'fraction',
+                el: '',
             },
             breakpoints: {
                 992: {
@@ -269,8 +268,9 @@ function mainUI() {
                 prevEl: '#primaryBnrContainer .btn-prev',
             },
             pagination: {
-                el: '',
-                type: ''
+                el: '#primaryBnrContainer .bnr-pagination',
+                type: 'bullets',
+                clickable: true
             },
             breakpoints: {
                 768: {
@@ -316,7 +316,7 @@ function mainUI() {
     }
     // 처음 방문하셨나요?
     function firstStep() {
-        var main = $('#main');
+        var main = $('#mainPage');
         main.find('.quick-bar .box-1').on('click', function () {
             // console.log('work');
             $(this).toggleClass('on');
