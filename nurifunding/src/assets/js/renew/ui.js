@@ -31,7 +31,8 @@ function commonUI() {
             winHeight = $(window).height(),
             hd = $("#header"),
             el = hd.children(),
-            ht_total = 0;
+            ht_total = 0,
+            userAgentFlag = null;
         // 공통
         $(window).on('scroll', function () {
             var scr = $(window).scrollTop();
@@ -41,74 +42,6 @@ function commonUI() {
                 hd.children('.gnb').removeClass('on');
             }
         });
-
-        // 모바일 네비게이션 해더
-        if (winWidth >= 992) {
-            var menu2 = $('.menu2');
-            var menu2Bg = $('#menu2Bg');
-            var menu2BgHt = 100;
-            var menu2HtArray = [];
-            var menu2HtMax = 0;
-
-            menu2.each(function (index, item) {
-                menu2HtArray.push($(item).outerHeight());
-            });
-            menu2HtArray.push(menu2BgHt);
-            menu2HtMax = menu2HtArray.reduce(function (prev, current) {
-                return prev > current ? prev : current;
-            });
-            var pdTop = parseInt(menu2Bg.css('padding-top'));
-            menu2Bg.css({
-                minHeight: menu2HtMax + pdTop * 2
-            });
-            // setTimeout(function () {
-            //     menu2.css({
-            //         minHeight: menu2HtMax,
-            //         padding: pdTop + 'px ' + 0
-            //     });
-            //     $('[class*=vline-]').height(menu2HtMax - (pdTop * 2));
-            // }, 100);
-            // $('.menu2:not(.big), #menu2Bg').addClass('on');
-            hd.find('.navbar-collapse .menu > li, .navbar-collapse .btn-cover.myinfo').on('mouseenter', function () {
-                $('.menu2:not(.big), #menu2Bg').addClass('on');
-            });
-            $('.navbar-collapse').on('mouseleave', function () {
-                $('.menu2, #menu2Bg').removeClass('on');
-            });
-            hd.find('.navbar-collapse .menu > li.big').hover(function () {
-                $('#autoinvBox').removeClass('on');
-            }, function () {
-                // $('#autoinvBox').show();
-                $('#autoinvBox').addClass('on');
-            });
-
-        } else {
-            // 상단 배너 높이 - 배너 있을 시 없을 시 높이 자동 설정
-            el.each(function () {
-                ht_total += $(this).outerHeight();
-            });
-            hd.height(ht_total);
-            /*모바일 바 클릭시 모바일 네비게이션 등장*/
-            $('.header .nav-tab').on('click', function () {
-                var ncHeaderHt = $('.nc-header').outerHeight();
-                $('#navbarCollapse').addClass('on');
-                $('#navbarCollapse').prev().addClass('on');
-                // $('#navbarCollapse .menu').height(winHeight - ncHeaderHt);
-                wheelFn(false);
-            });
-            /*모바일 네비게이션 닫기 버튼*/
-            $('#navbarCollapse .cls-btn').on('click', function () {
-                navbarCollapseFn.close();
-                wheelFn(true);
-            });
-            $('#navbarCollapse').prev('.bg-drop').on('click', function () {
-                navbarCollapseFn.close();
-                wheelFn(true);
-            });
-            $('#navbarCollapse .menu > li').on('click', function (e) {
-                $(this).toggleClass('on');
-            })
-        }
 
         // 스크롤 높이 자동 설정
         var $navbarCollapse = $('#navbarCollapse');
@@ -122,15 +55,90 @@ function commonUI() {
             winRsHt = $(window).height();
             var scrbarWd = 0;
             // console.log(winRsWd);
-            if ($('body').height() > winRsWd) {
+            if ($('body').height() > winRsHt) {
                 scrbarWd = 17;
             }
             if (winRsWd >= 992 - scrbarWd) {
-                // 스크롤 높이 자동 설정 - PC에서 재정의
-                $navbarMenu.css('height', '100%');
+                userAgentFlag = true;
+                if (userAgentFlag) {
+                    var menu2 = $('.menu2');
+                    var menu2Bg = $('#menu2Bg');
+                    var menu2BgHt = 100;
+                    var menu2HtArray = [];
+                    var menu2HtMax = 0;
+
+                    menu2.each(function (index, item) {
+                        menu2HtArray.push($(item).outerHeight());
+                    });
+                    menu2HtArray.push(menu2BgHt);
+                    menu2HtMax = menu2HtArray.reduce(function (prev, current) {
+                        return prev > current ? prev : current;
+                    });
+                    var pdTop = parseInt(menu2Bg.css('padding-top'));
+                    menu2Bg.css({
+                        minHeight: menu2HtMax + pdTop * 2
+                    });
+                    // setTimeout(function () {
+                    //     menu2.css({
+                    //         minHeight: menu2HtMax,
+                    //         padding: pdTop + 'px ' + 0
+                    //     });
+                    //     $('[class*=vline-]').height(menu2HtMax - (pdTop * 2));
+                    // }, 100);
+                    // $('.menu2:not(.big), #menu2Bg').addClass('on');
+                    hd.find('.navbar-collapse .menu > li, .navbar-collapse .btn-cover.myinfo').on('mouseenter', function () {
+                        $('.menu2:not(.big), #menu2Bg').addClass('on');
+                    });
+                    $('.navbar-collapse').on('mouseleave', function () {
+                        $('.menu2, #menu2Bg').removeClass('on');
+                    });
+                    hd.find('.navbar-collapse .menu > li.big').hover(function () {
+                        $('#autoinvBox').removeClass('on');
+                    }, function () {
+                        // $('#autoinvBox').show();
+                        $('#autoinvBox').addClass('on');
+                    });
+                    userAgentFlag = false;
+
+                    // 스크롤 높이 자동 설정 - PC에서 재정의
+                    $navbarMenu.css('height', '100%');
+                }
+
             } else {
-                winRsHt -= nchdHeight + snsHeight;
-                $navbarMenu.css('height', winRsHt);
+                if (!userAgentFlag) {
+                    // 상단 배너 높이 - 배너 있을 시 없을 시 높이 자동 설정
+                    ht_total = 0;
+                    el.each(function () {
+                        ht_total += $(this).outerHeight();
+                    });
+                    hd.height(ht_total);
+                    /*모바일 바 클릭시 모바일 네비게이션 등장*/
+                    $('.header .nav-tab').on('click', function () {
+                        var ncHeaderHt = $('.nc-header').outerHeight();
+                        $('#navbarCollapse').addClass('on');
+                        $('#navbarCollapse').prev().addClass('on');
+                        // $('#navbarCollapse .menu').height(winHeight - ncHeaderHt);
+                        wheelFn(false);
+                    });
+                    /*모바일 네비게이션 닫기 버튼*/
+                    $('#navbarCollapse .cls-btn').on('click', function () {
+                        navbarCollapseFn.close();
+                        wheelFn(true);
+                    });
+                    $('#navbarCollapse').prev('.bg-drop').on('click', function () {
+                        navbarCollapseFn.close();
+                        wheelFn(true);
+                    });
+                    $('#navbarCollapse .menu > li').on('click', function (e) {
+                        $(this).toggleClass('on');
+                    })
+                    userAgentFlag = true;
+
+                    // 스크롤 높이 자동 설정
+                    winRsHt -= nchdHeight + snsHeight;
+                    $navbarMenu.css('height', winRsHt);
+                }
+
             }
         });
 
