@@ -7,12 +7,15 @@ module.exports = function () {
 
         // 템플릿 경로
         template = {
-            src: source + '/template/**/!(_)*.html',
-            parts: source + '/template/**/_*.html',
+            src: source + '/www/**/!(_)*.html',
+            parts: source + '/www/**/_*.html',
             dest: development + '/views',
-            src_m: source + '/template_m/**/!(_)*.html',
-            parts_m: source + '/template_m/**/_*.html',
+            src_m: source + '/m/**/!(_)*.html',
+            parts_m: source + '/m/**/_*.html',
             dest_m: development + '/views_m',
+            src_app: source + '/app/**/!(_)*.html',
+            parts_app: source + '/app/**/_*.html',
+            dest_app: development + '/views_app',
         },
 
         // Sass 경로

@@ -1,0 +1,115 @@
+/*--- bxSlider 재정의 ---*/
+.bx-wrapper {
+    position: relative;
+    margin: 0 auto;
+}
+
+/* .bx-wrapper .bx-pager {display: none;} */
+.bx-wrapper .bx-viewport {
+    border: none;
+    box-shadow: none;
+    left: 0;
+    background: none;
+}
+
+#slider-prev .bx-prev,
+#slider-next .bx-next {
+    display: block;
+    width: 16px;
+    height: 36px;
+}
+
+.bx-wrapper .bx-controls-direction a {
+    width: 30px;
+    height: auto;
+    top: 158px;
+    z-index: auto;
+}
+
+.bx-wrapper .bx-controls-direction a img {
+    width: 100%;
+}
+
+/* .bx-wrapper .bx-prev {left: -50px;}
+.bx-wrapper .bx-next {right: -50px;} */
+
+/* 메인 슬라이더 */
+.main-page .swiper-container .bx-wrapper .bx-pager,
+.main-page .swiper-container .bx-wrapper .bx-controls-auto {
+    width: 1100px;
+    bottom: auto;
+    bottom: 185px;
+    left: 50%;
+    margin-left: -550px;
+    text-align: left;
+    text-indent: 30px;
+}
+
+.main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager a {
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border-radius: 8px;
+    transition: width 0.3s;
+    -webkit-transition: width 0.3s;
+}
+
+.main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:first-child a {
+    margin-left: 2px;
+}
+
+.main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager a:hover,
+.main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager a.active {
+    background: #00e7e7;
+}
+
+.main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager a.active {
+    width: 50px;
+}
+
+@media (max-width: 991px) {
+    .main-page .swiper-container .bx-wrapper .bx-pager {
+        width: 100%;
+        left: auto;
+        margin-left: auto;
+        top: auto;
+        bottom: 85px;
+        text-align: center;
+        text-indent: 0;
+    }
+
+    .main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager a {
+        width: 12px;
+        height: 12px;
+        margin: 0 3px;
+    }
+
+    .main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager a.active {
+        width: 24px;
+    }
+
+    .main-page .swiper-container .bx-wrapper .bx-pager.bx-default-pager .bx-pager-item:first-child a {
+        margin-left: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    /* .bx-wrapper .bx-controls-direction a {width: 12px; height: auto; top: 114px;}
+    .bx-wrapper .bx-controls-direction a img {width: 100%;}
+    .bx-wrapper .bx-prev {left: -10px;}
+    .bx-wrapper .bx-next {right: -10px;} */
+}
+
+@media (min-width: 992px) and (max-width: 1099px) {
+
+    .main-page .swiper-container .bx-wrapper .bx-pager,
+    .main-page .swiper-container .bx-wrapper .bx-controls-auto {
+        left: auto;
+        margin-left: auto;
+    }
+}
+
+/* swiper 재정의 */
+.swiper-container {
+    z-index: auto !important;
+}

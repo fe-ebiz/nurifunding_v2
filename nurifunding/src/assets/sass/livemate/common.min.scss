@@ -1,0 +1,39 @@
+@charset "utf-8";
+/*@import url(../fonts/notosanskr/notosanskr.css);*/
+@import url('https://nurifunding.co.kr/static/fonts/notosanskr/notosanskr.css');
+@import url('https://nurifunding.co.kr/static/fonts/nanumgothic/nanumgothic.css');
+@import url('https://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css');
+/* css 초기화 */
+/* @import url('https://nurifunding.co.kr/static/css/grid_1200.css'); */
+@import url('https://nurifunding.co.kr/static/css/include/pop.css');
+/* @import url('/static/css/include/pop.css'); */
+/*@import url('https://nurifunding.co.kr/static/fonts/nanumgothic/nanumgothic.css');
+@import url('https://fonts.googleapis.com/earlyaccess/notosanskr.css');
+@import url('https://fonts.googleapis.com/earlyaccess/nanumgothic.css');*/
+
+@import './parts/variables';
+@import './parts/mixins';
+@import './base';
+// @import './override';
+// @import './grid';
+// @import './page/inc/modal';
+
+body {
+    position: relative;
+    font-family: $font-ntss;
+    color: $font-color;
+    letter-spacing: -0.2px;
+}
+
+.header,
+.footer,
+.main {
+    position: relative;
+}
+
+.app-header {
+    display: flex;
+    align-items: center;
+    height: 56px;
+    padding: 0px 16px;
+}

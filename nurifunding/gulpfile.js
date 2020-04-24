@@ -25,7 +25,8 @@ function bSync() {
     browserSync.init({
         // watch: true,
         port: 3030,
-        startPath: './views/main',
+        // startPath: './views/main',
+        startPath: './views_app/livemate/',
         server: {
             baseDir: './dist'
         }
@@ -97,6 +98,35 @@ function templateMAll() {
         }))
         .pipe(htmlbeautify(config.htmlbeautify))
         .pipe(dest(config.template.dest_m))
+        .pipe(browserSync.stream({
+            match: '**/*.html'
+        }));
+};
+function templateApp() {
+    return src(config.template.src_app, {
+            since: lastRun(template)
+        })
+        .pipe(fileinclude({
+            prefix: '@@',
+            // basepath: '@file'
+            basepath: '@root'
+        }))
+        .pipe(htmlbeautify(config.htmlbeautify))
+        .pipe(dest(config.template.dest_app))
+        .pipe(browserSync.stream({
+            match: '**/*.html'
+        }));
+};
+
+function templateAppAll() {
+    return src(config.template.src_app)
+        .pipe(fileinclude({
+            prefix: '@@',
+            // basepath: '@file'
+            basepath: '@root'
+        }))
+        .pipe(htmlbeautify(config.htmlbeautify))
+        .pipe(dest(config.template.dest_app))
         .pipe(browserSync.stream({
             match: '**/*.html'
         }));
@@ -206,6 +236,8 @@ function watching(cb) {
     watch([config.template.parts], templateAll);
     watch([config.template.src_m], templateM);
     watch([config.template.parts_m], templateMAll);
+    watch([config.template.src_app], templateApp);
+    watch([config.template.parts_app], templateAppAll);
     watch(config.sass.src, sassDev)
     watch(config.sass.parts, sassDevAll)
     watch(config.css.src, css)
@@ -294,5 +326,8 @@ exports.testPathLocal = testPathLocal;
 exports.default = parallel(bSync, watching);
 exports.serve = parallel(series(parallel(template), sassDev, css, js, img, etc, bSync), watching);
 exports.build = parallel(series(parallel(template), sassDev, css, js, img, etc, bSync), watching);
+exports.buildM = parallel(series(parallel(templateM), sassDev, css, js, img, etc, bSync), watching);
+exports.buildApp = parallel(series(parallel(templateApp), sassDev, css, js, img, etc, bSync), watching);
+exports.buildAll = parallel(series(parallel(template, templateM, templateApp), sassDev, css, js, img, etc, bSync), watching);
 exports.default = parallel(bSync, watching);
 exports.test = series(parallel(template), sassPrd, css, js, img, etc, copyTest, testPathServer, bSyncTest);

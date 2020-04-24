@@ -1,0 +1,64 @@
+@@include('src/app/inc/livemate/_top.html', { "pageName": "lv-main" })
+
+<main id="container" class="container" role="main">
+    <div class="page-content verify-content">
+        <div class="page-body">
+            <div class="body-title lv-title-l">
+                김리브님, 이커머스 투자서비스<br>이용에 동의해주세요.
+            </div>
+            <div class="agree-form-list">
+                <div class="title">
+                    <label class="lv-checkbox-cover">
+                        <input type="checkbox" class="check-all" data-check-name="agree-check">
+                        <span class="lv-checkbox"></span>
+                        <span class="lv-title-m">전체동의</span>
+                    </label>
+                </div>
+                <div class="text">
+                    <div class="form-group d-flex align-items-center text-justify-space-between">
+                        <label class="lv-checkbox-cover">
+                            <input type="checkbox" class="check-item" data-check-name="agree-check">
+                            <span class="lv-checkbox"></span>
+                            <span class="lv-title-s">제휴사 약관(선택)</span>
+                        </label>
+                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                    </div>
+                    <div class="form-group d-flex align-items-center text-justify-space-between">
+                        <label class="lv-checkbox-cover">
+                            <input type="checkbox" class="check-item" data-check-name="agree-check">
+                            <span class="lv-checkbox"></span>
+                            <span class="lv-title-s">투자이용약관(필수)</span>
+                        </label>
+                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                    </div>
+                    <div class="form-group d-flex align-items-center text-justify-space-between">
+                        <label class="lv-checkbox-cover">
+                            <input type="checkbox" class="check-item" data-check-name="agree-check">
+                            <span class="lv-checkbox"></span>
+                            <span class="lv-title-s">개인정보취급방침(필수)</span>
+                        </label>
+                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                    </div>
+                    <div class="form-group d-flex align-items-center text-justify-space-between">
+                        <label class="lv-checkbox-cover">
+                            <input type="checkbox" class="check-item" data-check-name="agree-check">
+                            <span class="lv-checkbox"></span>
+                            <span class="lv-title-s">대부거래기본약관(필수)</span>
+                        </label>
+                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="lv-btn-float-cover">
+                <!-- 필수 체크 됐을 경우 disabled 제거 -->
+                <button type="submit" class="lv-btn-primary" disabled>다음</button>
+                <!-- <button type="submit" class="lv-btn-primary">다음</button> -->
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /.container -->
+
+@@include('src/app/inc/livemate/_bottom.html')
