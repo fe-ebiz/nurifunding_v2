@@ -10,6 +10,10 @@ img {
     vertical-align: middle;
 }
 
+img.init {
+    vertical-align: initial;
+}
+
 // em,
 // strong {
 //     font-weight: 700 !important;
@@ -143,6 +147,20 @@ input[type="password"] {
     display: flex !important;
 }
 
+.d-in-flex {
+    display: flex !important;
+}
+
+.child-flex-1 {
+    >* {
+        flex: 1 !important;
+    }
+}
+
+.flex-1 {
+    flex: 1 !important;
+}
+
 .d-block {
     display: block !important;
 }
@@ -151,11 +169,12 @@ input[type="password"] {
     display: inline-block !important;
 }
 
-.text-justify-space-between {
+.justify-content-space-between,
+.justify-space-between {
     justify-content: space-between;
 }
 
-.text-justify-center {
+.justify-center {
     justify-content: center;
 }
 
@@ -232,8 +251,11 @@ input[type="password"] {
     color: $c-blue !important;
 }
 
-// animate css
+.c-black {
+    color: black !important;
+}
 
+// animate css
 .animated {
     animation-duration: 1s;
     animation-fill-mode: both;
@@ -430,68 +452,87 @@ input[type="password"] {
     outline: 0;
 }
 
-// custom
-@mixin lv-text-custom($fz: null, $lh: null, $ls: null, $fw: 400, $ftfm: 'Noto Sans KR') {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: $fz;
-    line-height: $lh;
-    letter-spacing: $ls;
-    font-weight: $fw;
-    font-family: $ftfm;
-    border-radius: 6px;
+.bor-b-1 {
+    border-bottom: 1px solid #c3c3c3;
 }
 
-// .lv-title-l-2 {
-//     font-size: 23px;
-//     line-height: 32px;
-//     letter-spacing: -0.5px;
-// }
-
-.lv-title-l {
-    font-size: 23px;
-    line-height: 32px;
-    letter-spacing: -0.2px;
+.bor-0 {
+    border: none !important;
 }
 
-.lv-title-m {
-    font-size: 19px;
-    line-height: 28px;
-    letter-spacing: -0.2px;
+.form-group {
+    position: relative;
+    margin-bottom: 8px;
 }
 
-.lv-title-s {
-    font-size: 15px;
-    line-height: 22px;
-    letter-spacing: -0.5px;
+.form-line {
+    &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10px;
+        border-bottom: 1px solid $text-disabled;
+    }
 }
 
-.lv-price {
-    font-size: 17px;
-    line-height: 22px;
-    letter-spacing: -0.2px;
+.text-base {
+    color: $text-base !important
 }
 
-.lv-text {
-    font-size: 15px;
-    line-height: 22px;
-    letter-spacing: -0.5px;
-    font-weight: 400;
+.text-notemphasis {
+    color: $text-notemphasis !important
 }
 
-.lv-text {
-    font-size: 15px;
-    line-height: 22px;
-    letter-spacing: -0.5px;
-    font-weight: 400;
+.text-support {
+    color: $text-support !important
 }
 
-.lv-flag {
-    font-size: 12px;
-    line-height: 16px;
-    letter-spacing: 0;
+.text-disabled {
+    color: $text-disabled !important
 }
+
+.text-green {
+    color: $text-green !important
+}
+
+.text-blue {
+    color: $text-blue !important
+}
+
+.text-error {
+    color: $text-error !important
+}
+
+.border-base {
+    border-color: $text-base !important
+}
+
+.border-notemphasis {
+    border-color: $text-notemphasis !important
+}
+
+.border-support {
+    border-color: $text-support !important
+}
+
+.border-disabled {
+    border-color: $text-disabled !important
+}
+
+.border-green {
+    border-color: $text-green !important
+}
+
+.border-blue {
+    border-color: $text-blue !important
+}
+
+.border-error {
+    border-color: $text-error !important
+}
+
 
 .fz-12 {
     font-size: 12px !important
@@ -505,16 +546,45 @@ input[type="password"] {
     font-size: 22px !important
 }
 
-.lv-half-space {
-    display: inline-block;
-    width: 4px;
+.mt-0 {
+    margin-top: 0px !important;
 }
+
+.mt-1 {
+    margin-top: 8px !important;
+}
+
+.mt-2 {
+    margin-top: 16px !important;
+}
+
+.mb-0 {
+    margin-bottom: 0px !important;
+}
+
+.mb-1 {
+    margin-bottom: 8px !important;
+}
+
+.mb-2 {
+    margin-bottom: 16px !important;
+}
+
+// custom
+// .lv-title-l-2 {
+//     font-size: 23px;
+//     line-height: 32px;
+//     letter-spacing: -0.5px;
+// }
+
+// livemate custom 
 
 .lv-btn-primary {
     @include lv-text-custom(19px, 28px, -0.2px);
     @include size(312px, 48px);
     background-color: $btn-primary;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-support {
@@ -522,6 +592,7 @@ input[type="password"] {
     @include size(312px, 48px);
     background-color: $btn-nagative;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-disabled {
@@ -529,6 +600,7 @@ input[type="password"] {
     @include size(312px, 48px);
     background-color: $btn-disabled;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-primary-half {
@@ -536,6 +608,7 @@ input[type="password"] {
     @include size(154px, 48px);
     background-color: $btn-primary;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-support-half {
@@ -543,6 +616,7 @@ input[type="password"] {
     @include size(154px, 48px);
     background-color: $btn-nagative;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-module-primary {
@@ -550,6 +624,7 @@ input[type="password"] {
     @include size(264px, 48px);
     background-color: $btn-primary;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-module-support {
@@ -557,6 +632,7 @@ input[type="password"] {
     @include size(264px, 48px);
     background-color: $btn-nagative;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-module-engraved {
@@ -564,6 +640,7 @@ input[type="password"] {
     @include size(264px, 48px);
     background-color: #fff;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-module-support {
@@ -571,6 +648,7 @@ input[type="password"] {
     @include size(264px, 48px);
     background-color: $btn-nagative;
     color: #fff;
+    border-radius: 6px;
 }
 
 .lv-btn-secondary-p {
@@ -578,6 +656,7 @@ input[type="password"] {
     @include size(312px, 48px);
     background-color: #fff;
     color: #000;
+    border-radius: 6px;
 }
 
 .lv-btn-secondary-m {
@@ -585,20 +664,45 @@ input[type="password"] {
     @include size(264px, 48px);
     background-color: #fff;
     color: #000;
+    border-radius: 6px;
 }
 
-.l-btnv-text {
+.lv-btn-text {
     @include lv-text-custom(15px, 22px, -0.5px);
     background-color: #fff;
     color: #000;
     text-decoration: underline;
+    border-radius: 6px;
 }
 
-.l-btnv-tiny {
+.lv-btn-tiny {
     @include lv-text-custom(15px, 22px, -0.5px);
     @include size(96px, 40px);
     background-color: #fff;
     color: #000;
+    border-radius: 6px;
+}
+
+.lv-btn-flag {
+    @include lv-text-custom(12px, 16px, 0px);
+    // @include size(96px, 40px);
+    padding: 2.5px 12px;
+    background-color: #fff;
+    border: 1px solid #717171;
+    border-radius: 15px;
+    color: #717171;
+    // display: inline-flex;
+    // align-items: center;
+    // justify-content: center;
+    // color: #000;
+}
+
+.lv-btn-float-cover-wrapper {
+    height: 96px;
+
+    @include screen-xxs {
+        height: 80px;
+    }
 }
 
 .lv-btn-float-cover {
@@ -616,6 +720,7 @@ input[type="password"] {
         @include size(312px, 48px);
         background-color: $btn-primary;
         color: #fff;
+        border-radius: 6px;
     }
 
     .lv-btn-float-support {
@@ -623,6 +728,7 @@ input[type="password"] {
         @include size(312px, 48px);
         background-color: $btn-nagative;
         color: #fff;
+        border-radius: 6px;
     }
 
     .lv-btn-float-disabled {
@@ -630,6 +736,18 @@ input[type="password"] {
         @include size(312px, 48px);
         background-color: $btn-disabled;
         color: #fff;
+        border-radius: 6px;
+    }
+
+    &.line {
+        border-top: 1px solid $line-base;
+    }
+}
+
+// @media (max-width: 320px) {
+@include screen-xxs {
+    .lv-btn-float-cover {
+        padding: 16px 0;
     }
 }
 
@@ -674,52 +792,146 @@ input[type="password"] {
 
 }
 
-
 .lv-form-input-cover {
     position: relative;
     width: 100%;
 
-    .lv-form-input {
-        @include ap-reset;
-        outline: none;
-        // @include lv-text-custom(15px, 28px, -0.2px);
-        // font-size: 19px;
-        font-size: 15px;
-        color: $text-disabled;
-        padding: 10px 32px 10px 4px;
-        width: 100%;
-        height: 48px;
-        border-bottom: 1px solid $text-disabled;
-        box-sizing: border-box;
-        // border-bottom: 1px solid $text-base;
+    &.w-auto {
+        width: auto;
 
-        &::placeholder {
-            color: $text-disabled;
-        }
-
-        &:focus {
-            border-bottom: 1px solid $text-base;
-        }
+        // .lv-form-input {
+        //     width: auto;
+        // }
     }
 
-    .lv-form-text-remove {
-        position: absolute;
-        top: 0;
-        right: 0px;
-        width: 32px;
-        height: 100%;
-        display: none;
-        align-items: center;
-        justify-content: center;
+}
 
-        &.active {
-            display: flex;
-        }
+.lv-form-input {
+    @include ap-reset;
+    outline: none;
+    // @include lv-text-custom(15px, 28px, -0.2px);
+    // font-size: 19px;
+    font-size: 15px;
+    color: $text-disabled;
+    padding: 10px 4px 10px 4px;
+    width: 100%;
+    height: 48px;
+    border-bottom: 1px solid $text-disabled;
+    box-sizing: border-box;
+
+    // border-bottom: 1px solid $text-base;
+    &::placeholder {
+        color: $text-disabled;
+    }
+
+    &:focus {
+        border-bottom: 1px solid $text-base;
+    }
+
+}
+
+.lv-form-input.remove-container {
+    padding-right: 32px;
+}
+
+.lv-form-text-remove {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 32px;
+    height: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    &.active {
+        display: flex;
     }
 }
+
+
 
 .lv-tablist {
     .lv-tab {
         padding: 8px 0;
     }
+}
+
+.lv-title-l {
+    font-size: 23px;
+    line-height: 32px;
+    letter-spacing: -0.2px;
+}
+
+.lv-title-m {
+    font-size: 19px;
+    line-height: 28px;
+    letter-spacing: -0.2px;
+}
+
+.lv-title-s {
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+}
+
+.lv-price {
+    font-size: 17px;
+    line-height: 22px;
+    letter-spacing: -0.2px;
+}
+
+.lv-text {
+    font-size: 15px;
+    line-height: 22px;
+    letter-spacing: -0.5px;
+    font-weight: 400;
+}
+
+.lv-flag {
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0;
+}
+
+.lv-title-l-imp {
+    font-size: 23px !important;
+    line-height: 32px !important;
+    letter-spacing: -0.2px !important;
+}
+
+.lv-title-m-imp {
+    font-size: 19px !important;
+    line-height: 28px !important;
+    letter-spacing: -0.2px !important;
+}
+
+.lv-title-s-imp {
+    font-size: 15px !important;
+    line-height: 22px !important;
+    letter-spacing: -0.5px !important;
+}
+
+.lv-price-imp {
+    font-size: 17px !important;
+    line-height: 22px !important;
+    letter-spacing: -0.2px !important;
+}
+
+.lv-text-imp {
+    font-size: 15px !important;
+    line-height: 22px !important;
+    letter-spacing: -0.5px !important;
+    font-weight: 400 !important;
+}
+
+.lv-flag-imp {
+    font-size: 12px !important;
+    line-height: 16px !important;
+    letter-spacing: 0 !important;
+}
+
+.lv-half-space {
+    display: inline-block;
+    width: 4px;
 }

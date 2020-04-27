@@ -1,0 +1,40 @@
+@@include('src/app/inc/livemate/_top.html', { "pageName": "lv-main" })
+
+<main id="container" class="container" role="main">
+    <div class="page-content invest-sms-content">
+        <div class="page-body">
+            <div class="body-title lv-title-l">
+                휴대폰 인증을 해주세요.
+            </div>
+            <div class="body-subtitle lv-title-s text-notemphasis mt-1">
+                투자를 위해 최초 1회 휴대폰 인증이 필요합니다.
+            </div>
+            <div class="body-text lv-text">
+                지금 고객님의 휴대폰으로 인증번호가 전송되었습 니다.
+                세이퍼트에서 보내드린 <span class="text-blue">4자리 번호</span>를 입력창 에 입력하시면 인증이 완료됩니다.
+            </div>
+            <figure class="safety-picture">
+                <img src="https://nurifunding.co.kr/img/livemate/invest/safety.svg" alt="인증안내사진">
+            </figure>
+            <div class="safety-number">
+                <div class="form-group">
+                    <div class="lv-form-input-cover">
+                        <input type="text" class="lv-form-input lv-title-m" placeholder="인증번호 4자리 입력">
+                        <i class="lv-form-text-remove" data-role="form-text-remove"><img src="https://nurifunding.co.kr/img/livemate/common/form_text_remove.svg" alt="입력텍스트삭제"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="page-footer">
+            <div class="lv-btn-float-cover-wrapper">
+                <div class="lv-btn-float-cover line">
+                    <a href="./invest_01.html" class="lv-btn-primary" disabled>확인</a>
+                    <!-- <a href="./invest_01.html" class="lv-btn-primary">확인</a> -->
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<!-- /.container -->
+
+@@include('src/app/inc/livemate/_bottom.html')

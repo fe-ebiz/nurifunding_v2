@@ -1,6 +1,7 @@
 @charset "utf-8";
 
 @import '../../parts/variables';
+@import '../../parts/mixins';
 
 .bridge-content {
     height: 500px;
@@ -9,11 +10,23 @@
     justify-content: center;
 }
 
+
+.page-content {
+    padding: 0 $layout-p-x-3;
+
+    @include screen-xxs {
+        padding: 0 $layout-p-x-2;
+    }
+}
+
 .verify-content {
-    padding: 0 $layout-p-x-2;
 
     .body-title {
         margin-top: 24px;
+
+        @include screen-xxs {
+            @include lv-text-custom(19px, 28px, -0.2px);
+        }
     }
 
     .agree-form-list {
@@ -35,9 +48,167 @@
         }
     }
 
+    $text-mt: 100px;
+
     .verify-form-list {
-        .text {
-            margin-top: 100px;
+        .form-group-wrapper {
+            .space {
+                // padding: 10px 3px;
+                position: relative;
+                top: -3px;
+                padding: 0px 5px;
+                // margin: 0 5px;
+            }
+
+            &.resident-number {
+                .front-number {
+                    flex: 2;
+
+                    @include screen-xxs {
+                        > :first-child {
+                            flex: 1.2 !important;
+                        }
+
+                        > :nth-child(2) {
+                            flex: 1 !important;
+                        }
+                    }
+                }
+
+                .back-number {
+                    flex: 1.3;
+
+                }
+
+                // .space {
+                //     flex: 1;
+                // }
+            }
+
+            .bank-account {
+                flex: 1;
+            }
+
+            .bank-account-number {
+                flex: 1.7;
+
+                .copy-btn {
+                    width: 56px;
+                }
+            }
+        }
+
+        &.mt-type-1 {
+            .text {
+                margin-top: 100px;
+            }
+        }
+
+        &.mt-type-2 {
+            .text {
+                margin-top: 65px;
+            }
+        }
+
+        &.mt-type-3 {
+            .text {
+                margin-top: 40px;
+            }
+        }
+    }
+
+    .subtext-wrapper {
+        margin-top: 64px;
+
+        .dot {
+            position: relative;
+            padding-left: 12px;
+
+            &:before {
+                content: '·';
+                display: inline-block;
+                position: absolute;
+                left: 3px;
+            }
+        }
+    }
+}
+
+.product-list-content {
+    .product-list-wrapper {
+        margin-top: 56px;
+    }
+
+    .product-list {
+        .product-item {
+            >a {
+                display: block;
+                padding: 24px 28px;
+                box-shadow: 0 5px 20px rgba(46, 46, 46, .26);
+                border-radius: 10px;
+
+                @include screen-xxs {
+                    padding: 16px 20px;
+                }
+            }
+
+
+            &:not(:first-child) {
+                margin-top: 16px;
+            }
+
+            [class^=item] {
+                position: relative;
+
+                &:not(:first-child) {
+                    margin-top: 8px;
+                }
+            }
+
+            .item-title {
+                overflow: hidden;
+                white-space: nowrap;
+                // text-overflow: ellipsis;
+            }
+
+            .item-text {
+                >*:first-child {
+                    .text-blue {
+                        margin-right: 8px;
+                    }
+                }
+            }
+
+            .item-period {
+                .badge-period {
+                    margin-right: 10px;
+                    padding-left: 5px;
+                    padding-right: 5px;
+                    min-width: 56px;
+                    box-sizing: border-box;
+                }
+            }
+        }
+    }
+}
+
+.product-detail-content {}
+
+.invest-sms-content {
+    .page-body {
+        $mt: 24px;
+
+        .body-text {
+            margin-top: $mt;
+        }
+
+        .safety-picture {
+            margin-top: $mt;
+            text-align: center;
+        }
+
+        .safety-number {
+            margin-top: $mt;
         }
     }
 }

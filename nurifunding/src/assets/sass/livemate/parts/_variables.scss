@@ -70,8 +70,10 @@ $graph-color-8: #ffbe7e;
 $graph-color-9: #a4ddc6;
 $graph-color-10: #c7c7c7;
 
-$layout-p-x-1: 24px;
-$layout-p-x-2: 32px;
+$layout-p-x-1: 16px;
+$layout-p-x-2: 24px;
+$layout-p-x-3: 32px;
+
 // $layout-p-t: 56px;
 // $layout-p-b: 32px;
 
@@ -114,7 +116,8 @@ $btn-black: #2c2c2c;
 
 $fg-gray: #828282;
 
-$c-white: #fff;
+$c-white: white;
+$c-black: black;
 $c-green: #74b02f;
 $c-yellow: #fff588;
 // $c-red: #d52d00;

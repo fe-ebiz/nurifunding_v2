@@ -14,17 +14,20 @@ var formFn = {
         });
     },
     formTextFn: function () {
-        $('input[type=text]').on('input', function () {
-            console.log($(this).val());
+        $('input[type=text], input[type=password]').on('input', function () {
+            // console.log($(this).val());
             $(this).css('color', '#000');
             $(this).siblings('[data-role=form-text-remove]').addClass('active');
         });
         $('[data-role=form-text-remove]').on('click', function () {
-            $(this).siblings('input[type=text]').val('').focus();
+            $(this).siblings('input[type=text], input[type=password]').val('').focus();
             $(this).removeClass('active');
         });
         $('.lv-form-input-cover').on('blur', function () {
             $(this).siblings('[data-role=form-text-remove]').removeClass('active');
+        });
+        $("input:text[numberOnly]").on("keyup", function () {
+            $(this).val($(this).val().replace(/[^0-9]/g, ""));
         });
     }
 }

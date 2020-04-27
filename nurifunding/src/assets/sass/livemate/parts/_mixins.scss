@@ -1054,3 +1054,15 @@
         vertical-align: middle;
     }
 }
+
+// livemate custom 
+@mixin lv-text-custom($fz: null, $lh: null, $ls: null, $fw: 400, $ftfm: 'Noto Sans KR') {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: $fz;
+    line-height: $lh;
+    letter-spacing: $ls;
+    font-weight: $fw;
+    font-family: $ftfm;
+}
