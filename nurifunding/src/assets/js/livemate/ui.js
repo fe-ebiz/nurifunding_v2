@@ -1,5 +1,7 @@
 $(function () {
     formFn.init();
+    modalToggle();
+    toastToggle();
 });
 
 var formFn = {
@@ -36,13 +38,34 @@ var formFn = {
     }
 }
 
-//3자리 단위마다 콤마 생성
+// toast
+function toastToggle() {
+    $('[data-toggle=toast]').on('click', function () {
+        var $target = $(this).attr('data-target');
+        $('#' + $target).show();
+        setTimeout(function () {
+            $('#' + $target).fadeOut(100);
+        }, 500)
+    });
+}
+
+// 3자리 단위마다 콤마 생성
 function addCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-//모든 콤마 제거
+// 모든 콤마 제거
 function removeCommas(x) {
     if (!x || x.length == 0) return "";
     else return x.split(",").join("");
+}
+
+function modalToggle() {
+    $('[data-toggle=modal]').on('click', function () {
+        var $target = $(this).attr('data-target');
+        $('#' + $target).fadeIn(100);
+    });
+    $('[data-dismiss=modal]').on('click', function () {
+        $(this).closest('[class*=modal-wrapper]').fadeOut(100);
+    });
 }

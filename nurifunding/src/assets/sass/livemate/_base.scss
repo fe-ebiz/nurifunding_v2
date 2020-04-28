@@ -541,6 +541,12 @@ input[type="password"] {
     }
 }
 
+hr.line {
+    margin: 0;
+    border: 0;
+    border-top: 1px solid $line-base;
+}
+
 .bg-line {
     background-color: $line-base !important;
 }
@@ -620,6 +626,10 @@ input[type="password"] {
 
 .mt-0 {
     margin-top: 0px !important;
+}
+
+.mt-0-5 {
+    margin-top: 4px !important;
 }
 
 .mt-1 {
@@ -702,6 +712,124 @@ input[type="password"] {
     margin-bottom: 72px !important;
 }
 
+.my-0 {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
+.my-0-5 {
+    margin-top: 4px !important;
+    margin-bottom: 4px !important;
+}
+
+.my-1 {
+    margin-top: 8px !important;
+    margin-bottom: 8px !important;
+}
+
+.my-2 {
+    margin-top: 16px !important;
+    margin-bottom: 16px !important;
+}
+
+.my-3 {
+    margin-top: 24px !important;
+    margin-bottom: 24px !important;
+}
+
+.my-4 {
+    margin-top: 32px !important;
+    margin-bottom: 32px !important;
+}
+
+.my-5 {
+    margin-top: 40px !important;
+    margin-bottom: 40px !important;
+}
+
+.my-6 {
+    margin-top: 48px !important;
+    margin-bottom: 48px !important;
+}
+
+.my-7 {
+    margin-top: 56px !important;
+    margin-bottom: 56px !important;
+}
+
+.my-8 {
+    margin-top: 64px !important;
+    margin-bottom: 64px !important;
+}
+
+.my-9 {
+    margin-top: 72px !important;
+    margin-bottom: 72px !important;
+}
+
+.mx-0 {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.mx-0-5 {
+    margin-left: 4px !important;
+    margin-right: 4px !important;
+}
+
+.mx-1 {
+    margin-left: 8px !important;
+    margin-right: 8px !important;
+}
+
+.mx-2 {
+    margin-left: 16px !important;
+    margin-right: 16px !important;
+}
+
+.mx-3 {
+    margin-left: 24px !important;
+    margin-right: 24px !important;
+}
+
+.mx-4 {
+    margin-left: 32px !important;
+    margin-right: 32px !important;
+}
+
+.mx-5 {
+    margin-left: 40px !important;
+    margin-right: 40px !important;
+}
+
+.mx-6 {
+    margin-left: 48px !important;
+    margin-right: 48px !important;
+}
+
+.mx-7 {
+    margin-left: 56px !important;
+    margin-right: 56px !important;
+}
+
+.mx-8 {
+    margin-left: 64px !important;
+    margin-right: 64px !important;
+}
+
+.mx-9 {
+    margin-left: 72px !important;
+    margin-right: 72px !important;
+}
+
+.w-100 {
+    width: 100% !important;
+}
+
+.h-100 {
+    height: 100% !important;
+}
+
 // custom
 // .lv-title-l-2 {
 //     font-size: 23px;
@@ -710,7 +838,6 @@ input[type="password"] {
 // }
 
 // livemate custom 
-
 .lv-btn-primary {
     @include lv-text-custom(19px, 28px, -0.2px);
     @include size(312px, 48px);
@@ -771,14 +898,6 @@ input[type="password"] {
     @include lv-text-custom(19px, 28px, -0.2px);
     @include size(264px, 48px);
     background-color: #fff;
-    color: #fff;
-    border-radius: 6px;
-}
-
-.lv-btn-module-support {
-    @include lv-text-custom(19px, 28px, -0.2px);
-    @include size(264px, 48px);
-    background-color: $btn-nagative;
     color: #fff;
     border-radius: 6px;
 }
@@ -847,6 +966,12 @@ input[type="password"] {
     display: flex;
     justify-content: center;
     background-color: #fff;
+
+    [class^=lv-btn] {
+        &:not(:first-child) {
+            margin-left: 4px;
+        }
+    }
 
     .lv-btn-float-primary {
         @include lv-text-custom(19px, 28px, -0.2px);
@@ -1090,4 +1215,70 @@ input[type="password"] {
 .lv-half-space {
     display: inline-block;
     width: 4px;
+}
+
+.lv-toast-layer {}
+
+.lv-toast-wrapper {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s;
+
+}
+
+.lv-toast-container {
+    position: relative;
+    padding: 12px;
+    box-sizing: border-box;
+    background-color: $line-base;
+    text-align: center;
+    width: calc(100% - 64px);
+
+    @include screen-xxs {
+        width: calc(100% - 48px);
+    }
+}
+
+.lv-modal-layer {}
+
+.lv-modal-wrapper {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, .75);
+    transition: all .3s;
+
+}
+
+.lv-modal-container-scroll {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+
+.lv-modal-container {
+    position: relative;
+    box-sizing: border-box;
+    background-color: #fff;
+    width: calc(100% - 48px);
+
+    @include screen-xxs {
+        width: calc(100% - 24px);
+    }
+
 }

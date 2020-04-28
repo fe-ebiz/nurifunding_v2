@@ -32,7 +32,7 @@
                         <span class="lv-text text-support mg-r-1">보유 예치금</span>
                         <span class="lv-price">500,000원</span>
                     </div>
-                    <a href="javascript::" role="button" class="lv-text text-support d-flex align-items-center">
+                    <a href="javascript:;" role="button" class="lv-text text-support d-flex align-items-center">
                         예치금 계좌 <img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동" class="mg-l-1">
                     </a>
                 </div>
@@ -65,5 +65,12 @@
     </div>
 </main>
 <!-- /.container -->
+
+<div class="lv-modal-layer">
+    <!-- 예치금이 없을 경우 -->
+    @@include('src/app/inc/livemate/modal/_deposit_0.html')
+    <!-- 예치금이 있을 경우 -->
+    @@include('src/app/inc/livemate/modal/_deposit.html')
+</div>
 
 @@include('src/app/inc/livemate/_bottom.html')

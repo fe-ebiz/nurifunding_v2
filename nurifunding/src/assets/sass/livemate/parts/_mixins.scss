@@ -1066,3 +1066,37 @@
     font-weight: $fw;
     font-family: $ftfm;
 }
+
+@mixin lv-layout-1 {
+    padding: 0 $layout-p-x-2;
+
+    @include screen-xxs {
+        padding: 0 $layout-p-x-1;
+    }
+}
+
+@mixin lv-layout-2 {
+    padding: 0 $layout-p-x-2;
+
+    @include screen-xxs {
+        padding: 0 $layout-p-x-1;
+    }
+}
+
+@mixin lv-layout-3 {
+    padding: 0 $layout-p-x-3;
+
+    @include screen-xxs {
+        padding: 0 $layout-p-x-2;
+    }
+}
+
+@mixin lv-layout-m-1 {
+    margin-left: 8px;
+    margin-right: 8px;
+}
+
+@mixin lv-layout-p-1 {
+    padding-left: 8px;
+    padding-right: 8px;
+}

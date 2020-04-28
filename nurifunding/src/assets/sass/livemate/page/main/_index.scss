@@ -10,18 +10,19 @@
     justify-content: center;
 }
 
-
 .page-content {
-    padding: 0 $layout-p-x-3;
+    // .body-title {
+    //     @include lv-layout-p-1;
+    // }
 
-    @include screen-xxs {
-        padding: 0 $layout-p-x-2;
+    .page-body {
+        @include lv-layout-1;
     }
 }
 
 .verify-content {
-
     .body-title {
+        @include lv-layout-p-1;
         margin-top: 24px;
 
         @include screen-xxs {
@@ -29,7 +30,13 @@
         }
     }
 
+    .body-subtitle {
+        @include lv-layout-p-1;
+    }
+
+
     .agree-form-list {
+        @include lv-layout-m-1;
         margin-top: 64px;
         border: 1px solid #C3C3C3;
         border-radius: 5px;
@@ -51,6 +58,8 @@
     $text-mt: 100px;
 
     .verify-form-list {
+        @include lv-layout-m-1;
+
         .form-group-wrapper {
             .space {
                 // padding: 10px 3px;
@@ -118,7 +127,7 @@
     }
 
     .subtext-wrapper {
-        margin-top: 64px;
+        @include lv-layout-p-1;
 
         .dot {
             position: relative;
@@ -135,6 +144,11 @@
 }
 
 .product-list-content {
+
+    .body-title {
+        padding: 0;
+    }
+
     .product-list-wrapper {
         margin-top: 56px;
     }
@@ -196,6 +210,7 @@
 
 .invest-sms-content {
     .page-body {
+        @include lv-layout-m-1;
         $mt: 24px;
 
         .body-text {
@@ -214,7 +229,6 @@
 }
 
 .invest-product-content {
-
     .product-card {
         display: block;
         padding: 24px 28px;
@@ -269,7 +283,13 @@
         }
     }
 
+    .deposit-wrapper {
+        @include lv-layout-p-1;
+    }
+
     .invest-price-wrapper {
+        @include lv-layout-p-1;
+
         .btn-area {
             .price-btn {
                 height: 34px;
@@ -280,5 +300,45 @@
                 width: 4px;
             }
         }
+    }
+
+    .subtext-wrapper {
+        @include lv-layout-p-1;
+
+        .dot {
+            position: relative;
+            padding-left: 12px;
+
+            &:before {
+                content: '·';
+                display: inline-block;
+                position: absolute;
+                left: 3px;
+            }
+        }
+    }
+}
+
+.invest-notice-content {
+    .body-title {
+        @include lv-layout-p-1;
+    }
+
+    .notice-card {
+        display: block;
+        padding: 12px 16px;
+        // box-shadow: 0 5px 20px rgba(46, 46, 46, .12);
+        // border-radius: 10px;
+        height: 176px;
+        box-sizing: border-box;
+        background-color: $bg-1;
+
+        @include screen-xxs {
+            padding: 16px 20px;
+        }
+    }
+
+    .notice-agree-wrapper {
+        @include lv-layout-p-1;
     }
 }

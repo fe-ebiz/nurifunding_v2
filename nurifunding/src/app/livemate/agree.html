@@ -21,7 +21,7 @@
                             <span class="lv-checkbox"></span>
                             <span class="lv-title-s">제휴사 약관(선택)</span>
                         </label>
-                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                        <a href="javascript:;" onclick="$('#termsUseModal').show()"><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
                     </div>
                     <div class="form-group d-flex align-items-center justify-content-space-between">
                         <label class="lv-checkbox-cover">
@@ -29,7 +29,7 @@
                             <span class="lv-checkbox"></span>
                             <span class="lv-title-s">투자이용약관(필수)</span>
                         </label>
-                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                        <a href="javascript:;" onclick="$('#termsInvestModal').show()"><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
                     </div>
                     <div class="form-group d-flex align-items-center justify-content-space-between">
                         <label class="lv-checkbox-cover">
@@ -37,7 +37,7 @@
                             <span class="lv-checkbox"></span>
                             <span class="lv-title-s">개인정보취급방침(필수)</span>
                         </label>
-                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                        <a href="javascript:;" onclick="$('#termsPrivacyModal').show()"><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
                     </div>
                     <div class="form-group d-flex align-items-center justify-content-space-between">
                         <label class="lv-checkbox-cover">
@@ -45,7 +45,7 @@
                             <span class="lv-checkbox"></span>
                             <span class="lv-title-s">대부거래기본약관(필수)</span>
                         </label>
-                        <a href=""><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
+                        <a href="javascript:;" onclick="$('#termsLoanModal').show()"><img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동"></a>
                     </div>
                 </div>
             </div>
@@ -62,5 +62,12 @@
     </div>
 </main>
 <!-- /.container -->
+
+<div class="lv-modal-layer">
+    @@include('src/app/inc/livemate/terms/_use.html')
+    @@include('src/app/inc/livemate/terms/_invest.html')
+    @@include('src/app/inc/livemate/terms/_privacy.html')
+    @@include('src/app/inc/livemate/terms/_loan.html')
+</div>
 
 @@include('src/app/inc/livemate/_bottom.html')
