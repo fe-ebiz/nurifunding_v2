@@ -212,3 +212,73 @@
         }
     }
 }
+
+.invest-product-content {
+
+    .product-card {
+        display: block;
+        padding: 24px 28px;
+        box-shadow: 0 5px 20px rgba(46, 46, 46, .12);
+        border-radius: 10px;
+
+        @include screen-xxs {
+            padding: 16px 20px;
+        }
+
+
+        &:not(:first-child) {
+            margin-top: 16px;
+        }
+
+        [class^=item] {
+            position: relative;
+
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+
+        .item-info {
+            .el {
+                position: relative;
+
+                &:nth-child(1) {
+                    flex: 1.5;
+                }
+
+                &:nth-child(2) {
+                    flex: 1.4;
+                }
+
+                &:nth-child(3) {
+                    flex: 1;
+                }
+
+                &:not(:first-child) {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 1px;
+                        height: 100%;
+                        background-color: $line-base;
+                    }
+                }
+            }
+        }
+    }
+
+    .invest-price-wrapper {
+        .btn-area {
+            .price-btn {
+                height: 34px;
+                border-radius: 17px;
+            }
+
+            .space {
+                width: 4px;
+            }
+        }
+    }
+}

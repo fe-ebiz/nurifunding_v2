@@ -174,7 +174,11 @@ input[type="password"] {
     justify-content: space-between;
 }
 
-.justify-center {
+.justify-content-space-around {
+    justify-content: space-around;
+}
+
+.justify-content-center {
     justify-content: center;
 }
 
@@ -386,64 +390,124 @@ input[type="password"] {
     -webkit-transform: scale(1);
 }
 
-.mt-1 {
+.mg-t-1 {
     margin-top: 1px !important;
 }
 
-.mb-1 {
+.mg-b-1 {
     margin-bottom: 1px !important;
 }
 
-.ml-1 {
+.mg-l-1 {
     margin-left: 1px !important;
 }
 
-.mr-1 {
+.mg-r-1 {
     margin-right: 1px !important;
 }
 
-.mx-1 {
+.mg-x-1 {
     margin-left: 1px !important;
     margin-right: 1px !important;
 }
 
-.my-1 {
+.mg-y-1 {
     margin-top: 1px !important;
     margin-bottom: 1px !important;
 }
 
-.m-1 {
+.mg-t-n1 {
+    margin-top: -1px !important;
+}
+
+.mg-b-n1 {
+    margin-bottom: -1px !important;
+}
+
+.mg-l-n1 {
+    margin-left: -1px !important;
+}
+
+.mg-r-n1 {
+    margin-right: -1px !important;
+}
+
+.mg-x-n1 {
+    margin-left: -1px !important;
+    margin-right: -1px !important;
+}
+
+.mg-y-n1 {
+    margin-top: -1px !important;
+    margin-bottom: -1px !important;
+}
+
+.mg-1 {
     margin: 1px;
 }
 
-.mt-n1 {
-    margin-top: -1px !important;
-}
-
-.mb-n1 {
-    margin-bottom: -1px !important;
-}
-
-.ml-n1 {
-    margin-left: -1px !important;
-}
-
-.mr-n1 {
-    margin-right: -1px !important;
-}
-
-.mx-n1 {
-    margin-left: -1px !important;
-    margin-right: -1px !important;
-}
-
-.my-n1 {
-    margin-top: -1px !important;
-    margin-bottom: -1px !important;
-}
-
-.m-n1 {
+.mg-n1 {
     margin: -1px;
+}
+
+.mg-t-2 {
+    margin-top: 2px !important;
+}
+
+.mg-b-2 {
+    margin-bottom: 2px !important;
+}
+
+.mg-l-2 {
+    margin-left: 2px !important;
+}
+
+.mg-r-2 {
+    margin-right: 2px !important;
+}
+
+.mg-x-2 {
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+}
+
+.mg-y-2 {
+    margin-top: 2px !important;
+    margin-bottom: 2px !important;
+}
+
+.mg-t-n2 {
+    margin-top: -2px !important;
+}
+
+.mg-b-n2 {
+    margin-bottom: -2px !important;
+}
+
+.mg-l-n2 {
+    margin-left: -2px !important;
+}
+
+.mg-r-n2 {
+    margin-right: -2px !important;
+}
+
+.mg-x-n2 {
+    margin-left: -2px !important;
+    margin-right: -2px !important;
+}
+
+.mg-y-n2 {
+    margin-top: -2px !important;
+    margin-bottom: -2px !important;
+}
+
+.mg-2 {
+    margin: 2px;
+}
+
+.mg-n2 {
+    margin: -2px;
 }
 
 // [role="tab"][aria-selected="true"],
@@ -475,6 +539,10 @@ input[type="password"] {
         height: 10px;
         border-bottom: 1px solid $text-disabled;
     }
+}
+
+.bg-line {
+    background-color: $line-base !important;
 }
 
 .text-base {
@@ -533,6 +601,10 @@ input[type="password"] {
     border-color: $text-error !important
 }
 
+.border-line {
+    border-color: $line-base !important
+}
+
 
 .fz-12 {
     font-size: 12px !important
@@ -558,8 +630,40 @@ input[type="password"] {
     margin-top: 16px !important;
 }
 
+.mt-3 {
+    margin-top: 24px !important;
+}
+
+.mt-4 {
+    margin-top: 32px !important;
+}
+
+.mt-5 {
+    margin-top: 40px !important;
+}
+
+.mt-6 {
+    margin-top: 48px !important;
+}
+
+.mt-7 {
+    margin-top: 56px !important;
+}
+
+.mt-8 {
+    margin-top: 64px !important;
+}
+
+.mt-9 {
+    margin-top: 72px !important;
+}
+
 .mb-0 {
     margin-bottom: 0px !important;
+}
+
+.mb-0-5 {
+    margin-bottom: 4px !important;
 }
 
 .mb-1 {
@@ -568,6 +672,34 @@ input[type="password"] {
 
 .mb-2 {
     margin-bottom: 16px !important;
+}
+
+.mb-3 {
+    margin-bottom: 24px !important;
+}
+
+.mb-4 {
+    margin-bottom: 32px !important;
+}
+
+.mb-5 {
+    margin-bottom: 40px !important;
+}
+
+.mb-6 {
+    margin-bottom: 48px !important;
+}
+
+.mb-7 {
+    margin-bottom: 56px !important;
+}
+
+.mb-8 {
+    margin-bottom: 64px !important;
+}
+
+.mb-9 {
+    margin-bottom: 72px !important;
 }
 
 // custom
@@ -714,6 +846,7 @@ input[type="password"] {
     box-sizing: border-box;
     display: flex;
     justify-content: center;
+    background-color: #fff;
 
     .lv-btn-float-primary {
         @include lv-text-custom(19px, 28px, -0.2px);
@@ -807,6 +940,7 @@ input[type="password"] {
 }
 
 .lv-form-input {
+    position: relative;
     @include ap-reset;
     outline: none;
     // @include lv-text-custom(15px, 28px, -0.2px);
@@ -828,10 +962,32 @@ input[type="password"] {
         border-bottom: 1px solid $text-base;
     }
 
+    &.active.active-text-base {
+        color: $text-base;
+    }
+
+    &.active.active-text-blue {
+        color: $text-blue;
+    }
+
 }
 
 .lv-form-input.remove-container {
     padding-right: 32px;
+}
+
+.lv-form-input.won-container {
+    padding-right: 32px;
+}
+
+.lv-form-won {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .lv-form-text-remove {
