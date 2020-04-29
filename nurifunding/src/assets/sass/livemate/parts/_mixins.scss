@@ -1068,26 +1068,22 @@
 }
 
 @mixin lv-layout-1 {
-    padding: 0 $layout-p-x-2;
+    padding-left: $layout-p-x-2;
+    padding-right: $layout-p-x-2;
 
     @include screen-xxs {
-        padding: 0 $layout-p-x-1;
+        padding-left: $layout-p-x-1;
+        padding-right: $layout-p-x-1;
     }
 }
 
 @mixin lv-layout-2 {
-    padding: 0 $layout-p-x-2;
+    padding-left: $layout-p-x-3;
+    padding-right: $layout-p-x-3;
 
     @include screen-xxs {
-        padding: 0 $layout-p-x-1;
-    }
-}
-
-@mixin lv-layout-3 {
-    padding: 0 $layout-p-x-3;
-
-    @include screen-xxs {
-        padding: 0 $layout-p-x-2;
+        padding-left: $layout-p-x-2;
+        padding-right: $layout-p-x-2;
     }
 }
 
