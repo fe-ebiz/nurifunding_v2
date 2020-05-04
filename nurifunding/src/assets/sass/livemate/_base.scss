@@ -47,15 +47,6 @@ input {
     line-height: normal;
 }
 
-.sr-only {
-    overflow: hidden;
-    position: absolute;
-    border: 0;
-    width: 1px;
-    height: 1px;
-    clip: rect(1px, 1px, 1px, 1px);
-}
-
 button {
     cursor: pointer;
     border: none;
@@ -104,6 +95,9 @@ input[type="password"] {
     clip: rect(0, 0, 0, 0);
 }
 
+.not-scroll {
+    overflow: hidden;
+}
 
 .ap-reset {
     @include ap-reset;
@@ -537,6 +531,14 @@ input[type="password"] {
             background-color: $text-blue;
         }
     }
+}
+
+.bx {
+    box-sizing: border-box;
+}
+
+.bor {
+    border: 1px solid #c3c3c3;
 }
 
 .bor-b-1 {
@@ -1000,6 +1002,16 @@ hr.line {
     @include size(312px, 48px);
     background-color: $btn-disabled;
     color: #fff;
+    border-radius: 6px;
+}
+
+.lv-btn-outline {
+    @include lv-text-custom(19px, 28px, -0.2px);
+    @include size(312px, 48px);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    color: $text-base;
     border-radius: 6px;
 }
 

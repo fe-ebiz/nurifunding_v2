@@ -1,7 +1,7 @@
 $(function () {
     formFn.init();
-    modalToggle();
-    toastToggle();
+    commonUI.init();
+    livemateUI.init();
 });
 
 var formFn = {
@@ -38,15 +38,63 @@ var formFn = {
     }
 }
 
-// toast
-function toastToggle() {
-    $('[data-toggle=toast]').on('click', function () {
-        var $target = $(this).attr('data-target');
-        $('#' + $target).show();
-        setTimeout(function () {
-            $('#' + $target).fadeOut(100);
-        }, 500)
-    });
+var commonUI = {
+    init: function () {
+        this.aDisabled();
+        this.toastToggle();
+        this.modalToggle();
+        this.collapseToggle();
+    },
+    aDisabled: function () {
+        $('body').on('click', 'a', function () {
+            if ($(this).is("[disabled]")) {
+                event.preventDefault();
+            }
+        });
+    },
+    toastToggle: function () {
+        $('[data-toggle=toast]').on('click', function () {
+            var $target = $(this).attr('data-target');
+            $($target).show();
+            setTimeout(function () {
+                $($target).fadeOut(100);
+            }, 500)
+        });
+    },
+    modalToggle: function () {
+        $('[data-toggle=modal]').on('click', function () {
+            var $target = $(this).attr('data-target');
+            $($target).show();
+            $('body').addClass('not-scroll');
+        });
+        $('[data-dismiss=modal]').on('click', function () {
+            $(this).closest('[class*=modal-wrapper]').fadeOut(100);
+            $('body').removeClass('not-scroll');
+        });
+    },
+    collapseToggle: function () {
+        $('[data-toggle=collapse]').on('click', function () {
+            var $target = $(this).attr('data-target');
+            $($target).slideToggle(100);
+        });
+    }
+}
+
+var livemateUI = {
+    init: function () {
+        this.pointList();
+    },
+    pointList: function () {
+        $('#pointList').slick({
+            // autoplay: true,
+            centerMode: true,
+            slidesToShow: 1,
+            centerPadding: '24px',
+            infinite: false,
+            dots: true,
+            appendArrows: '',
+        });
+    },
 }
 
 // 3자리 단위마다 콤마 생성
@@ -58,14 +106,4 @@ function addCommas(x) {
 function removeCommas(x) {
     if (!x || x.length == 0) return "";
     else return x.split(",").join("");
-}
-
-function modalToggle() {
-    $('[data-toggle=modal]').on('click', function () {
-        var $target = $(this).attr('data-target');
-        $('#' + $target).fadeIn(100);
-    });
-    $('[data-dismiss=modal]').on('click', function () {
-        $(this).closest('[class*=modal-wrapper]').fadeOut(100);
-    });
 }

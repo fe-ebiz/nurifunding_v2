@@ -14,7 +14,7 @@
 @import './parts/variables';
 @import './parts/mixins';
 @import './base';
-// @import './override';
+@import './override';
 // @import './grid';
 @import './page/inc/modal';
 
@@ -36,4 +36,12 @@ body {
     align-items: center;
     height: 56px;
     padding: 0px 16px;
+}
+
+.lv-group-1 {
+    @include lv-layout-1;
+}
+
+.lv-group-2 {
+    @include lv-layout-2;
 }
