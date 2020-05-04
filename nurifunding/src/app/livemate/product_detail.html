@@ -33,8 +33,8 @@
                     <div class="item-progress px-0-5 mt-8">
                         <div class="progressbar">
                             <div class="percentbar" style="width: 70%">
-                                <div class="percent-text">
-
+                                <div class="percent-text lv-text">
+                                    70%
                                 </div>
                             </div>
                         </div>
@@ -48,23 +48,31 @@
             <div class="invest-point-wrapper lv-bg-1 mt-5 wrapper-pd-1">
                 <div class="lv-title-m fw-b lv-group-1">투자 포인트</div>
                 <div class="point-list-wrapper mt-3">
-                    <ul class="point-list">
+                    <ul class="point-list" id="pointList">
                         <li class="point-item lv-title-m ta-center">
-                            누적상환액 300억<br>
-                            연체율 0%
-                        </li>
-                        <!-- <li class="point-item">
-                            안정성 높은 SCF<br>
-                            (선정산) 상품
+                            <div class="in">
+                                누적상환액 300억<br>
+                                연체율 0%
+                            </div>
                         </li>
                         <li class="point-item">
-                            투자자금 손실 보전<br>
-                            프로그램 가동
+                            <div class="in">
+                                안정성 높은 SCF<br>
+                                (선정산) 상품
+                            </div>
                         </li>
                         <li class="point-item">
-                            1만원부터 가능한<br>
-                            고수익 소액투자
-                        </li> -->
+                            <div class="in">
+                                투자자금 손실 보전<br>
+                                프로그램 가동
+                            </div>
+                        </li>
+                        <li class="point-item">
+                            <div class="in">
+                                1만원부터 가능한<br>
+                                고수익 소액투자
+                            </div>
+                        </li>
                     </ul>
                 </div>
                 <div class="expect-wrapper lv-group-2 mt-7">
@@ -100,11 +108,11 @@
                         <i class="dot">·</i>
                         배송이 완료되어 00(소셜마켓) 판매자센터에서 조 회시 지급이 확정된 정산채권에만 투자되는 상품입 니다.
                     </p>
-                    <p class="d-flex align-items-top justify-content-space-between">
+                    <p class="d-flex align-items-top justify-content-space-between mt-1">
                         <i class="dot">·</i>
                         정산계좌 확보를 통한 안정성을 보완한 투자 상품 입니다.
                     </p>
-                    <p class="d-flex align-items-top justify-content-space-between">
+                    <p class="d-flex align-items-top justify-content-space-between mt-1">
                         <i class="dot">·</i>
                         확정된 매출에 대한 담보대출로 손실가능성이 적은 상품입니다
                     </p>
@@ -113,28 +121,45 @@
             <div class="safety-wrapper mt-7 lv-group-1">
                 <div class="lv-title-m fw-b d-flex align-items-center justify-content-space-between">
                     안전 설정담보
-                    <a href="javascript:;" role="button" class="lv-text text-base d-flex align-items-center">
+                    <a href="javascript:;" data-toggle="modal" data-target="#productWordModal" role="button" class="lv-text text-base d-flex align-items-center">
                         용어안내 <img src="https://nurifunding.co.kr/img/livemate/common/arr_right.svg" alt="이동" class="mg-l-1">
                     </a>
                 </div>
                 <div class="safety-chart">
-                    <div class="my-3">
-                        차트내용
+                    <div class="d-flex align-items-center justify-content-space-between mt-3">
+                        <div class="el">
+                            <div class="pie-chart" style="background: conic-gradient(#3fcfe1 0% 33.33%, #fe8f01 33.33% 66.66%, #e9e9e9 66.66% 100%);">
+                                <span class="center"></span>
+                            </div>
+                        </div>
+                        <div class="el">
+                            <div class="chart-info">
+                                <div class="title lv-text">담보감정가 <b>3,510만원</b></div>
+                                <div class="list lv-flag mt-2">
+                                    <p><span class="dot ago"></span> 선순위금 <b>0원(0%)</b></p>
+                                    <p class="mt-0-5"><span class="dot loan"></span> 누리펀딩 대출금 <b>3,500만원</b></p>
+                                    <p class="mt-0-5"><span class="dot rest"></span> 잔여 여유금 <b>0%</b></p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <!-- <img src="https://nurifunding.co.kr/img/livemate/intro/icon_security.png" alt="높은 수익률"> -->
-                <div class="safety-text-list lv-text mt-3 lv-group-1">
+                <div class="safety-text-list lv-text mt-3">
                     <div class="text-item d-flex align-items-top justify-content-space-between">
-                        <i class="dot">·</i>
                         <div class="el">
-                            <div class="title">담보물 변동사항 모니터링 시스템</div>
+                            <img src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
+                        </div>
+                        <div class="el mt-0-5">
+                            <div class="title fw-m">담보물 변동사항 모니터링 시스템</div>
                             <div class="text">누리펀딩의 리스크관리 시스템에 의해 해당 담보물의 가치변동 및 권리침해 여부가 매일 모니터링 되고 있습니다.</div>
                         </div>
                     </div>
-                    <div class="text-item d-flex align-items-top justify-content-space-between">
-                        <i class="dot">·</i>
+                    <div class="text-item d-flex align-items-top justify-content-space-between mt-2">
                         <div class="el">
-                            <div class="title">부실채권 사후처리 시스템</div>
+                            <img src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
+                        </div>
+                        <div class="el mt-0-5">
+                            <div class="title fw-m">부실채권 사후처리 시스템</div>
                             <div class="text">
                                 대출기간이 지나거나 이자를 2회 이상 지체 시 누리펀딩은 적절한 절차에 의하여 다음과 같은 자체 추심을 진행합니다.
                             </div>
@@ -146,13 +171,22 @@
                 <div class="lv-title-m fw-b d-flex align-items-center justify-content-space-between">
                     여신평가 등급
                 </div>
-                <p class="lv-text">
+                <p class="lv-text mt-2">
                     기업(개인)의 신용등급과 담보가치를
                     <br>결합한 여신평가 등급입니다.
                 </p>
-                <div class="evaluation-chart mt-3">
-                    <div class="my-3">
-                        차트내용
+                <div class="evaluation-chart mt-2">
+                    <div class="grade">
+                        <p class="g-th c-blue fw-b ta-center">BB</p>
+                        <div class="g-chart">
+                            <span id="g-chart-dot" class="n2"></span>
+                        </div>
+                        <div class="g-label">
+                            <span class="nth-1">SAFTY ZONE<br>안전존</span>
+                            <span class="nth-2">THINK ZONE<br>고려존</span>
+                            <span class="nth-3">AGREE ZONE<br>고려존</span>
+                            <span class="nth-4">REJECT ZONE<br>거절존</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -166,11 +200,123 @@
                 <div class="scf-img mt-3">
                     <img src="https://nurifunding.co.kr/img/livemate/product/scf.png" alt="선정산서비스">
                 </div>
+                <div class="scf-more mt-3">
+                    <a href="javascript:;" data-toggle="modal" data-target="#productScfModal" role="button" class="lv-btn-tiny w-100 bor bx">SCF(선정산 서비스) 자세히 보기</a>
+                </div>
+            </div>
+            <hr class="line mt-7">
+            <div class="collapse-btn-cover product-guidance mt-3 lv-group-2 lv-title-m d-flex align-items-center justify-content-space-between">
+                <div class="lv-title-m">상품안내</div>
+                <div class="collapse-btn active" data-toggle="collapse" data-target="#productGuidance">
+                    <img src="https://nurifunding.co.kr/img/livemate/common/arr_down.svg" alt="펼치기" class="down">
+                    <img src="https://nurifunding.co.kr/img/livemate/common/arr_up.svg" alt="접기" class="up">
+                </div>
+            </div>
+            <div class="collapse product-guidance mt-5" id="productGuidance">
+                <div class="guidance-invest-wrapper lv-group-1">
+                    <div class="lv-title-m fw-b d-flex align-items-center justify-content-space-between">
+                        투자개요
+                    </div>
+                    <div class="lv-text mt-2">
+                        <table class="guidance-invest-tbl ta-left">
+                            <colgroup>
+                                <col style="width: 100px">
+                            </colgroup>
+                            <tbody>
+                                <tr>
+                                    <th>상품</th>
+                                    <td>매출채권담보대출</td>
+                                </tr>
+                                <tr>
+                                    <th>대출금</th>
+                                    <td>4,300만 원</td>
+                                </tr>
+                                <tr>
+                                    <th>근질권</th>
+                                    <td>5,160만 원</td>
+                                </tr>
+                                <tr>
+                                    <th>상품종류</th>
+                                    <td>매출채권담보대출(선정산)</td>
+                                </tr>
+                                <tr>
+                                    <th>담보이용</th>
+                                    <td>매출채권담보</td>
+                                </tr>
+                                <tr>
+                                    <th>총매출채권</th>
+                                    <td>4,350만 원</td>
+                                </tr>
+                                <tr>
+                                    <th>자금용도</th>
+                                    <td>운영자금</td>
+                                </tr>
+                                <tr>
+                                    <th>안정장치</th>
+                                    <td>
+                                        대출거래약정서<br>
+                                        근질권설정계약서<br>
+                                        채권양도계약서<br>
+                                        업무협약서(공정증서 작성)<br>
+                                        매출채권 판매대금 입금계좌<br>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="guidance-product-wrapper mt-7 lv-group-1">
+                    <div class="lv-title-m fw-b d-flex align-items-center justify-content-space-between">
+                        상품개요
+                    </div>
+                    <div class="scf-more mt-3">
+                        <a href="javascript:;" data-toggle="modal" data-target="#productOverviewModal" role="button" class="lv-btn-tiny w-100 bor bx">상품개요 상세보기</a>
+                    </div>
+                </div>
+            </div>
+            <hr class="line mt-7">
+            <div class="collapse-btn-cover mustread mt-3 lv-group-2 lv-title-m d-flex align-items-center justify-content-space-between">
+                <div class="lv-title-m">꼭 확인하세요</div>
+                <div class="collapse-btn active" data-toggle="collapse" data-target="#mustread">
+                    <img src="https://nurifunding.co.kr/img/livemate/common/arr_down.svg" alt="펼치기" class="down">
+                    <img src="https://nurifunding.co.kr/img/livemate/common/arr_up.svg" alt="접기" class="up">
+                </div>
+            </div>
+            <div class="collapse mustread mt-3" id="mustread">
+                <div class="mustread-wrapper lv-group-2">
+                    <div class="lv-text text-notemphasis mustread-text-list">
+                        <p class="d-flex align-items-top justify-content-space-between">
+                            <i class="dot">·</i>
+                            온라인을 통한 금융투자상품의 투자는 회사의 권유 없이 고객님의 판단에 의해 이루어지며,대출의 특성상 상환예정일 이전에 중도 상환될 수 있습니다.
+                        </p>
+
+                        <p class="d-flex align-items-top justify-content-space-between mt-2">
+                            <i class="dot">·</i>
+                            투자이용약관 제11조와 12조 내용에 따라 상환지연 등에 해당되는 경우 채권추심과 환가절차 과정에서 원금의 일부 손실이 발생할 수 있으며 채권추심 등을 통해 투자금 회수에 상당기간 소요될 수 있습니다.
+                        </p>
+
+                        <p class="d-flex align-items-top justify-content-space-between mt-2">
+                            <i class="dot">·</i>
+                            당사는 원금 및 수익률을 보장하지 않으므로 투자 시 신중한 결정 바랍니다.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="offer-wrapper mt-5 lv-group-2">
+                <div class="logo-cover">
+                    <img src="https://nurifunding.co.kr/img/livemate/common/logo_mark.png" alt="로고마크">
+                    <span class="logo-text lv-text fw-m">누리펀딩</span>
+                </div>
+                <div class="lv-flag text-notemphasis mt-2">
+                    이 투자상품은 누리펀딩에서 제공합니다.<br>
+                    사업자등록번호 677-81-00871<br>
+                    고객센터 <span class="text-blue">1666-4570</span><br>
+                </div>
             </div>
         </div>
         <div class="page-footer">
             <div class="lv-btn-float-cover-wrapper">
-                <div class="lv-btn-float-cover">
+                <div class="lv-btn-float-cover line">
                     <a href="./invest_sms.html" class="lv-btn-primary">투자 시작하기</a>
                 </div>
             </div>
@@ -178,5 +324,11 @@
     </div>
 </main>
 <!-- /.container -->
+
+<div class="lv-modal-layer">
+    @@include('src/app/inc/livemate/product/_word.html')
+    @@include('src/app/inc/livemate/product/_scf.html')
+    @@include('src/app/inc/livemate/product/_overview.html')
+</div>
 
 @@include('src/app/inc/livemate/_bottom.html')
