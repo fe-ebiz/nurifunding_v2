@@ -102,6 +102,7 @@ function templateMAll() {
             match: '**/*.html'
         }));
 };
+
 function templateApp() {
     return src(config.template.src_app, {
             since: lastRun(template)
