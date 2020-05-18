@@ -1,2 +1,3 @@
-# nurifunding_v1.1
- 누리펀딩 v1.1
+# nurifunding_v2
+
+### 누리펀딩 리뉴얼 사이트 - 진행중
