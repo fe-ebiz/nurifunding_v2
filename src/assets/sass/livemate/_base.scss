@@ -981,6 +981,11 @@ hr.line {
 // }
 
 // livemate custom 
+a[class*=lv-btn],
+button[class*=lv-btn] {
+    cursor: default;
+}
+
 .lv-btn-primary {
     @include lv-text-custom(19px, 28px, -0.2px);
     @include size(312px, 48px);
