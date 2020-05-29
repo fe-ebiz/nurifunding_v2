@@ -347,7 +347,7 @@
             }
 
             .bank-account-number {
-                flex: 1.7;
+                flex: 3.2;
 
                 .copy-btn {
                     width: 56px;
@@ -401,10 +401,12 @@
     }
 
     .product-list-wrapper {
+        box-sizing: border-box;
         margin-top: 40px;
         padding-top: 26px;
-        padding-bottom: 26px;
+        // padding-bottom: 26px;
         background-color: $bg-1;
+        height: calc(100vh - 214px);
     }
 
     .product-list {

@@ -23,6 +23,7 @@ body {
     font-family: $font-ntss;
     color: $font-color;
     letter-spacing: -0.2px;
+
 }
 
 .header,
@@ -36,6 +37,26 @@ body {
     align-items: center;
     height: 56px;
     padding: 0px 16px;
+}
+
+.nuri-header{
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0px 16px;
+    background-color: #126CC3;
+    position: relative;
+    
+    .nuri-header-title{
+        color: white;
+        font-family: "Segoe UI",sans-serif;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        text-align: center;
+        font-size: 15px;
+    }
 }
 
 .lv-group-1 {

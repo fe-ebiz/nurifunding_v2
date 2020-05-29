@@ -48,17 +48,18 @@
     <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/renew/libs/slick/slick-theme.css">
 
     <!-- https://nurifunding.co.kr -->
-    <!-- <link rel="stylesheet" href="/static/css/livemate/common.min.css">
-    <link rel="stylesheet" href="/static/css/livemate/contents.min.css"> -->
-    <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/common.min.css">
-    <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/contents.min.css">
+    <link rel="stylesheet" href="/static/css/livemate/common.min.css">
+    <link rel="stylesheet" href="/static/css/livemate/contents.min.css">
+    <!-- <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/common.min.css">
+    <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/contents.min.css"> -->
 
     <script src="https://nurifunding.co.kr/static/js/renew/libs/jquery-1.10.2.min.js"></script>
 
 </head>
 
 <body id="@@pageNamePage" class="@@pageName-page">
+    
     <h1 class="sr-only">누리펀딩</h1>
     <div class="wrapper" id="wrapper">
 
-        @@include('src/template_app/inc/livemate/_header.html')
+        @@include('src/template_app/inc/livemate/_header.html',{"nuriTitle":"@@nuriTitle"})

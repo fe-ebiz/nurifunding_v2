@@ -1222,6 +1222,14 @@ button[class*=lv-btn] {
 
 }
 
+.lv-form-input-text-center{
+    text-align: center;
+}
+
+.lv-form-input-text-right{
+    text-align: right;
+}
+
 .lv-form-input {
     position: relative;
     @include ap-reset;
@@ -1235,6 +1243,7 @@ button[class*=lv-btn] {
     height: 48px;
     border-bottom: 1px solid $text-disabled;
     box-sizing: border-box;
+    
 
     // border-bottom: 1px solid $text-base;
     &::placeholder {
