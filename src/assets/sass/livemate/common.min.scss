@@ -37,6 +37,13 @@ body {
     align-items: center;
     height: 56px;
     padding: 0px 16px;
+
+    &>a{
+        display: block;
+        z-index: 10;
+        width: 24px;
+        height: 24px;
+    }
 }
 
 .nuri-header{
@@ -49,13 +56,20 @@ body {
     
     .nuri-header-title{
         color: white;
-        font-family: "Segoe UI",sans-serif;
+        
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
         width: 100%;
         text-align: center;
+        font-family: "Segoe UI",sans-serif;
         font-size: 15px;
+    }
+    &>a{
+        display: block;
+        z-index: 10;
+        width: 24px;
+        height: 24px;
     }
 }
 

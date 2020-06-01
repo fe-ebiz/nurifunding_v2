@@ -224,7 +224,8 @@
 
             .item-text {
                 .check {
-                    background: url(https://nurifunding.co.kr/img/livemate/intro/icon_check.svg) no-repeat left center;
+                    background: url(https://nurifunding.co.kr/img/livemate/intro/icon_check.png) no-repeat left center;
+                    background-size: 16px 16px;
                     padding-left: 28px;
                 }
             }
@@ -392,6 +393,16 @@
 }
 
 .product-list-content {
+    position: relative;
+    /*버튼부분*/
+    .product-list-btn-intro{
+        position: absolute;
+        top: 36px;
+        right: 25px;
+        &>img{
+            width: 25px;
+        }
+    }
     .page-body {
         padding: 0;
     }
@@ -406,7 +417,7 @@
         padding-top: 26px;
         // padding-bottom: 26px;
         background-color: $bg-1;
-        height: calc(100vh - 214px);
+        height: calc(100vh - 262px);
     }
 
     .product-list {
@@ -470,6 +481,13 @@
     }
 
     .product-intro {
+        // .item-thumbnail{
+        //     width: 100%;
+        //     img{
+        //         width: 100%;
+        //     }
+        // }
+
         .item-progress {
             position: relative;
 
@@ -1006,5 +1024,25 @@
 
     .notice-agree-wrapper {
         @include lv-layout-p-1;
+    }
+}
+
+
+/*scf-이미지 제어*/
+.scf-img{
+    padding: 20px 48px;
+    text-align: center;
+}
+
+.icon-system-img{
+    width: 16px;
+    height: 16px;
+}
+
+.advantage-item{
+    .item-picture{
+        &>img{
+            width: 70px;   
+        }
     }
 }
