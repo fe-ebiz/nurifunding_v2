@@ -67,6 +67,9 @@
 
         <div class="app-header">
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
             <a href="javascript: history.back()">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_black.png" alt="이전">
             </a>
@@ -75,6 +78,7 @@
             <a href="javascript: history.back()">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_white.png" alt="이전">
             </a>
+<<<<<<< HEAD
 =======
             <a href="javascript: history.back()"><img src="https://nurifunding.co.kr/img/livemate/common/btn_prev.svg" alt="이전"></a>
         </div>
@@ -87,5 +91,7 @@
             </a>
             <!--문구타이틀은 jquery로 제어(bottom.php에 있음)-->
 >>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
             <p class="nuri-header-title">문구타이틀</p>
         </div>

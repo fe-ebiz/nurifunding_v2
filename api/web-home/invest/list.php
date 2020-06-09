@@ -17,12 +17,18 @@
                         1만원부터 투자가능한 연 10% 고수익 상품!
                     </div>
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
                     <!--"i"버튼-인트로로 가기-->
                     <a class="product-list-btn-intro" href="http://api.nurifunding.co.kr/intro.php">
                         <img src="https://nurifunding.co.kr/img/livemate/common/btn_back_intro.png" alt="인트로 버튼">
                     </a>
+<<<<<<< HEAD
 =======
 >>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
                     <div class="product-list-wrapper lv-group-1">
                         <ul class="product-list">
 							<?php
