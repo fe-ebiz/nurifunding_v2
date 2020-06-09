@@ -20,7 +20,23 @@
     //상단 파란색 박스 타이틀 문구 적용
     $(document).ready(function(){
         let getText = $(".nuri-header-title-info");
-        $(".nuri-header .nuri-header-title").text(getText.text())
+        $(".nuri-header .nuri-header-title").text(getText.text());
+        
+        //메뉴관련
+        let menu = $('.nav-menu');
+        let btnOpen = $('.btn-menu-open')
+        let btnClose = $('.btn-menu-close')
+
+        btnOpen.on('click',function(){
+            menu.css('display','block');
+            $("html, body").css("overflow-y",'hidden');
+        });
+        btnClose.on('click',function(){
+            menu.css('display','none');
+            $("html, body").css("overflow-y",'scroll');
+
+        });
+    
     });
     </script>
     <!--[if lt IE 9]><script type="text/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script> <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script> <![endif]-->

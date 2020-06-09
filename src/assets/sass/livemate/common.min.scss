@@ -46,17 +46,19 @@ body {
     }
 }
 
+/*누리헤드*/
 .nuri-header{
     display: flex;
     align-items: center;
+    // box-sizing: border-box;
     height: 48px;
     padding: 0px 16px;
     background-color: #126CC3;
     position: relative;
+    justify-content: space-between;
     
     .nuri-header-title{
         color: white;
-        
         position: absolute;
         left: 50%;
         transform: translateX(-50%);
@@ -70,6 +72,131 @@ body {
         z-index: 10;
         width: 24px;
         height: 24px;
+    }
+    .btn-menu-open{
+        width: 24px;
+        // height: 24px;
+        z-index: 10;
+        display: block;
+    }
+}
+//메뉴
+.nav-menu{
+    display: none;
+    *{
+        box-sizing: border-box;    
+    }
+    z-index: 100;
+    position: absolute;
+    top: 56px;
+    height: calc(100vh - 56px);
+    width: 100%;
+    background-color: white;
+    &>*{
+        width: 100%;
+    }
+    .menu-top{
+        padding-bottom: 19px;
+        &>*{
+            width: 100%;
+        }
+        background-color: #126CC3;
+        .menu-close-box{
+            position: relative;
+            height: 48px;
+            .btn-menu-close{
+                position: absolute;
+                top: 16px;
+                right: 16px;
+                width: 24px;
+            }
+        }
+        .menu-title-box{      
+            color: white;
+            padding-left: 35px;
+            .sub-title{
+                font-size: 17px;
+                font-weight: 400;
+            }
+            .main-title{
+                margin-top: 8px;
+                font-size: 27px;
+            }
+        }
+        .menu-info-box{
+            height: 26px;
+            position: relative;
+           &>a{
+                position: absolute;
+                right: 16px;
+                height: 22px;
+                display: flex;
+                align-items: center;
+                p{
+                    color: white;
+                    font-size: 15px;
+                    font-weight: 400;
+                }
+                .icon-box{
+                    width: 16px;
+                
+                }
+            }
+        }
+    }
+    .menu-ul{
+        &>li{
+            width: 100%;
+            height: 56px;
+            border-bottom: 1px solid #eee;
+            a{
+                padding-left: 30px;
+                position: relative;
+                display: block;
+                width: 100%;
+                height: 100%;
+                p{
+                    color: #231916;
+                    font-size: 17px;
+                    font-weight: 500;
+                    position: relative;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    .span-sub-txt{
+                        color: #3182F6;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+    .menu-bottom{
+        position: absolute;
+        bottom: 0;
+        padding-left: 30px;
+        padding-bottom: 26px;
+        .menu-bottom-logo{
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            .img-logo{
+                margin-right: 6px;
+            }
+            .logo-name{
+                font-size: 15px;
+                font-weight: 500;
+            }
+        }
+        .menu-bottom-service{
+            p{
+                padding-bottom: 6px;
+                color: #828282;
+                font-size: 12px;
+                .phon-num{
+                    color: #3182F6;
+                }
+            }
+        }
     }
 }
 

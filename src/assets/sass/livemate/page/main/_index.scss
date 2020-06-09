@@ -415,9 +415,12 @@
         box-sizing: border-box;
         margin-top: 40px;
         padding-top: 26px;
-        // padding-bottom: 26px;
+        padding-bottom: 26px;
         background-color: $bg-1;
-        height: calc(100vh - 262px);
+    }
+
+    .product-list-min-height{
+        min-height: calc(100vh - 262px);
     }
 
     .product-list {

@@ -54,8 +54,8 @@
     <!-- https://nurifunding.co.kr -->
     <!-- <link rel="stylesheet" href="/static/css/livemate/common.min.css">
     <link rel="stylesheet" href="/static/css/livemate/contents.min.css"> -->
-    <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/common.min.css">
-    <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/contents.min.css">
+    <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/common.min.css?ver="<?=time();?>>
+    <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/contents.min.css?ver="<?=time();?>>
 
     <script src="https://nurifunding.co.kr/static/js/renew/libs/jquery-1.10.2.min.js"></script>
 
@@ -66,7 +66,6 @@
     <div class="wrapper" id="wrapper">
 
         <div class="app-header">
-<<<<<<< HEAD
             <a href="javascript: history.back()">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_black.png" alt="이전">
             </a>
@@ -75,17 +74,48 @@
             <a href="javascript: history.back()">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_white.png" alt="이전">
             </a>
-=======
-            <a href="javascript: history.back()"><img src="https://nurifunding.co.kr/img/livemate/common/btn_prev.svg" alt="이전"></a>
+            <p class="nuri-header-title">문구 타이틀</p>
+            <button type="button" class="btn-menu-open">
+                <img src="https://nurifunding.co.kr/img/livemate/common/btn_menu_open.png" alt="메뉴버튼 이미지">
+            </button>
         </div>
-        <div class="nuri-header">
-            <a href="javascript: history.back()">
-                <svg width="24" height="24">
-                    <path fill="transparent" d="M0 0h24v24H0z"/>
-                    <path fill="#fff" d="M15.501 4.461a.48.48 0 01.719.634l-.04.045L9.319 12l6.86 6.861a.48.48 0 01.04.634l-.04.045a.48.48 0 01-.634.04l-.045-.04-7.2-7.2a.48.48 0 01-.04-.634l.04-.045z"/>
-                </svg>
-            </a>
-            <!--문구타이틀은 jquery로 제어(bottom.php에 있음)-->
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-            <p class="nuri-header-title">문구타이틀</p>
-        </div>
+        <!--메뉴부분-->
+        <nav class="nav-menu">
+            <div class="menu-top">
+                <div class="menu-close-box">
+                    <button type="button" class="btn-menu-close">
+                        <img src="https://nurifunding.co.kr/img/livemate/common/btn_menu_close.png" alt="메뉴버튼 이미지">
+                    </button>
+                </div>
+                <div class="menu-title-box">
+                    <p class="sub-title">연10% 고수익 투자습관</p>
+                    <h4 class="main-title">누리펀딩</h4>
+                </div>
+                <div class="menu-info-box">
+                    <a href="#회원가입">
+                        <p>나의 예치금 계좌정보</p>
+                        <div class="icon-box">
+                            <img src="https://nurifunding.co.kr/img/livemate/common/icon_arr_right_small_whiet.png" alt="작은 오른쪽 화살표">
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <ul class="menu-ul">
+                <li><a href="#"><p>상품목록<span class="span-sub-txt"> 연10%</span></p></a></li>
+                <li><a href="#"><p>예치금 조회</p></a></li>
+                <li><a href="#"><p>투자 상세내역</p></a></li>
+                <li><a href="#"><p>누리펀딩 소개</p></a></li>
+            </ul>
+            <div class="menu-bottom">
+                <div class="menu-bottom-logo">
+                    <img class="img-logo" src="https://nurifunding.co.kr/img/livemate/common/logo_mark.png" alt="로고">
+                    <h5 class="logo-name">누리펀딩</h5>
+                </div>
+                <div class="menu-bottom-service">
+                    <p>고객센터 <span class="phon-num">1666-4570</span></p>
+                    <p>ㆍ평일 : 09시~18시 | 점심휴무 : 13시~14시</p>
+                    <p>ㆍ토/일/공휴일 휴무</p>
+                </div>
+            </div>
+        </nav>
+        

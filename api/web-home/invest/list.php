@@ -5,7 +5,8 @@
         jsMsg("로그인이 필요합니다", "/intro.php");
     }
 ?>
-        <div class="sr-only nuri-header-title-info">이커머스 선정산 투자</div>
+
+        <div class="sr-only nuri-header-title-info">이커머스 선정산 투자 </div>
         <main id="container" class="container" role="main">
             <div class="page-content product-list-content">
                 <div class="page-body">
@@ -16,14 +17,11 @@
                     <div class="body-subtitle lv-title-s text-notemphasis lv-group-1 mt-1">
                         1만원부터 투자가능한 연 10% 고수익 상품!
                     </div>
-<<<<<<< HEAD
                     <!--"i"버튼-인트로로 가기-->
-                    <a class="product-list-btn-intro" href="http://api.nurifunding.co.kr/intro.php">
+                    <!-- <a class="product-list-btn-intro" href="http://api.nurifunding.co.kr/intro.php">
                         <img src="https://nurifunding.co.kr/img/livemate/common/btn_back_intro.png" alt="인트로 버튼">
-                    </a>
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-                    <div class="product-list-wrapper lv-group-1">
+                    </a> -->
+                    <div class="product-list-wrapper lv-group-1 product-list-min-height">
                         <ul class="product-list">
 							<?php
         						//$qry = "select * from goods where state = 'Y' and  and liiv = 'Y' order by num desc";
