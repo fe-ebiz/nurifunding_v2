@@ -252,6 +252,7 @@
                         <div class="lv-title-m fw-b lv-group-1">투자 하이라이트</div>
                         <div class="highlight-text-list lv-text mt-3 lv-group-1">
 						
+<<<<<<< HEAD
                             <?php
                                 $c_arr = explode("\r\n", $contents_arr[0]);
                                 for($i=0; $i<count($c_arr); $i++) {
@@ -269,6 +270,13 @@
                             ?>
 
                             <p class="d-flex align-items-top mt-1">
+=======
+                            <p class="d-flex align-items-top justify-content-space-between">
+                                <i class="dot">·</i>
+                                <?=nl2br($contents_arr[0]);?>
+                            </p>
+                            <p class="d-flex align-items-top justify-content-space-between mt-1">
+>>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
                                 <i class="dot">·</i>
                                 <?=nl2br($contents_arr[2]);?>
                             </p>
@@ -322,7 +330,11 @@
                         <div class="safety-text-list lv-text mt-3">
                             <div class="text-item d-flex align-items-top justify-content-space-between">
                                 <div class="el">
+<<<<<<< HEAD
                                     <img class="icon-system-img" src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
+=======
+                                    <img src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
+>>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
                                 </div>
                                 <div class="el mt-0-5">
                                     <div class="title fw-m">담보물 변동사항 모니터링 시스템</div>
@@ -331,7 +343,11 @@
                             </div>
                             <div class="text-item d-flex align-items-top justify-content-space-between mt-2">
                                 <div class="el">
+<<<<<<< HEAD
                                     <img class="icon-system-img" src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
+=======
+                                    <img src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
+>>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
                                 </div>
                                 <div class="el mt-0-5">
                                     <div class="title fw-m">부실채권 사후처리 시스템</div>

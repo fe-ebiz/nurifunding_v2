@@ -16,10 +16,13 @@
                     <div class="body-subtitle lv-title-s text-notemphasis lv-group-1 mt-1">
                         1만원부터 투자가능한 연 10% 고수익 상품!
                     </div>
+<<<<<<< HEAD
                     <!--"i"버튼-인트로로 가기-->
                     <a class="product-list-btn-intro" href="http://api.nurifunding.co.kr/intro.php">
                         <img src="https://nurifunding.co.kr/img/livemate/common/btn_back_intro.png" alt="인트로 버튼">
                     </a>
+=======
+>>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
                     <div class="product-list-wrapper lv-group-1">
                         <ul class="product-list">
 							<?php
