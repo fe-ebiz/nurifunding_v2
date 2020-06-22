@@ -66,6 +66,13 @@
     <div class="wrapper" id="wrapper">
 
         <div class="app-header">
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
+>>>>>>> 3240507eacfb6245fcdf7660402517f4f220f1cf
             <a href="javascript: history.back()">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_black.png" alt="이전">
             </a>
@@ -74,10 +81,29 @@
             <a href="javascript: history.back()">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_white.png" alt="이전">
             </a>
+<<<<<<< HEAD
             <p class="nuri-header-title">문구 타이틀</p>
             <button type="button" class="btn-menu-open">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_menu_open.png" alt="메뉴버튼 이미지">
             </button>
+=======
+<<<<<<< HEAD
+=======
+            <a href="javascript: history.back()"><img src="https://nurifunding.co.kr/img/livemate/common/btn_prev.svg" alt="이전"></a>
+        </div>
+        <div class="nuri-header">
+            <a href="javascript: history.back()">
+                <svg width="24" height="24">
+                    <path fill="transparent" d="M0 0h24v24H0z"/>
+                    <path fill="#fff" d="M15.501 4.461a.48.48 0 01.719.634l-.04.045L9.319 12l6.86 6.861a.48.48 0 01.04.634l-.04.045a.48.48 0 01-.634.04l-.045-.04-7.2-7.2a.48.48 0 01-.04-.634l.04-.045z"/>
+                </svg>
+            </a>
+            <!--문구타이틀은 jquery로 제어(bottom.php에 있음)-->
+>>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
+            <p class="nuri-header-title">문구타이틀</p>
+>>>>>>> 3240507eacfb6245fcdf7660402517f4f220f1cf
         </div>
         <!--메뉴부분-->
         <nav class="nav-menu">

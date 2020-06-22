@@ -17,11 +17,28 @@
                     <div class="body-subtitle lv-title-s text-notemphasis lv-group-1 mt-1">
                         1만원부터 투자가능한 연 10% 고수익 상품!
                     </div>
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
+>>>>>>> 3240507eacfb6245fcdf7660402517f4f220f1cf
                     <!--"i"버튼-인트로로 가기-->
                     <!-- <a class="product-list-btn-intro" href="http://api.nurifunding.co.kr/intro.php">
                         <img src="https://nurifunding.co.kr/img/livemate/common/btn_back_intro.png" alt="인트로 버튼">
+<<<<<<< HEAD
                     </a> -->
                     <div class="product-list-wrapper lv-group-1 product-list-min-height">
+=======
+                    </a>
+<<<<<<< HEAD
+=======
+>>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
+=======
+>>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
+                    <div class="product-list-wrapper lv-group-1">
+>>>>>>> 3240507eacfb6245fcdf7660402517f4f220f1cf
                         <ul class="product-list">
 							<?php
         						//$qry = "select * from goods where state = 'Y' and  and liiv = 'Y' order by num desc";
