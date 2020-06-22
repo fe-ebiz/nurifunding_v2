@@ -1,4 +1,6 @@
 <?php
+    $m = "menu";
+
 	include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/common/top.php";
 	include_once(INC_DIR."/config/KISA_SEED_ECB.php");
 
@@ -32,11 +34,9 @@
 		return substr($ret,0,strlen($ret)-1);
 	}
 
-	if($_SERVER["REMOTE_ADDR"] == "61.74.233.194" || $_SERVER["REMOTE_ADDR"] == "61.74.233.196") {
-		$qry = "select * from member where name = 'a15a15a15a15a15a15a15a15a15'";
-	} else {
-		$qry = "select * from member where phone = '".$_POST["phone"]."' || ci = '".$_POST["ci"]."'";
-	}
+if($_SERVER["REMOTE_ADDR"] != "61.74.233.194" && $_SERVER["REMOTE_ADDR"] != "61.74.233.196") {
+	$qry = "select * from member where phone = '".$_POST["phone"]."' || ci = '".$_POST["ci"]."'";
+	
 	$res = mysqli_query($dbconn, $qry);
 	$num = mysqli_num_rows($res);
 	if($num > 0) {
@@ -46,10 +46,22 @@
         $liv_q = "insert into liivmate (cid, uid, wdate) values ('".$_POST["cid"]."', '".$mnum."', now())";
         mysqli_query($dbconn, $liv_q);
 
+        $phone = $mem["phone"];
+        $ci = $mem["ci"];
+        //# 리브메이트 데이터 전송
+        include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/_member_success.php";
+
+        if($rs_code != "0000") {
+           jsMsg(' [ '.$rs_code.' ] 누리펀딩에 가입이 실패하였습니다.', '../intro.php');
+           exit;
+        }
+        
         setcookie(XOREncode("userid"), XOREncode($mem['userid']), 0, "/", base_cookie);
 
         jsMsg('누리펀딩에 가입되어있는 회원입니다.', '../invest/list.php');
+        
 	}
+}
 ?>
 
 		
@@ -149,17 +161,28 @@
 					</form>
                 </div>
                 <div class="page-footer">
-                    <div class="lv-btn-float-cover">
-                        <!-- 필수 체크 됐을 경우 disabled 제거 -->
-                        <a href="#" onclick="javascript: verifyPw();" id="nx_btn" class="lv-btn-primary" disabled>확인</a>
-                        <!-- <a href="./verify_complete.html" class="lv-btn-primary">확인</a> -->
-                    </div>
+					<div class="lv-btn-float-cover-wrapper">
+						<div class="lv-btn-float-cover">
+							<!-- 필수 체크 됐을 경우 disabled 제거 -->
+							<a href="#" onclick="javascript: verifyPw();" id="nx_btn" class="lv-btn-primary" disabled>확인</a>
+							<!-- <a href="./verify_complete.html" class="lv-btn-primary">확인</a> -->
+						</div>
+					</div>
                 </div>
             </div>
         </main>
-        <!-- /.container -->
-
-
+		<!-- /.container -->
+		
+		<script>
+			//키패드 화면가림 방지
+    		$(document).ready(function(){
+        		$(window).resize(function(){
+            	let topPos = $(document).height();
+            	$('html, body').scrollTop(topPos);
+				});
+			});
+        
+		</script>
 <?php
 	include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/common/bottom.php";
 ?>

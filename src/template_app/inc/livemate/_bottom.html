@@ -29,17 +29,29 @@ $(document).ready(function(){
 
     //메뉴오픈
     let menu = $('.nav-menu');
-    let btnOpen = $('.btn-menu-open')
-    let btnClose = $('.btn-menu-close')
+    let btnOpen = $('.btn-menu-open');
+    let btnClose = $('.btn-menu-close');
     btnOpen.on('click',function(){
         menu.css('display','block');
-        $("html, body").css("overflow-y",'hidden');
+        // $("html, body").css("overflow-y",'hidden');
+        $("main").css("display",'none');
     });
     btnClose.on('click',function(){
         menu.css('display','none');
-        $("html, body").css("overflow-y",'scroll');
+        //$("html, body").css("overflow-y",'scroll');
+        $("main").css("display",'block');
+    });
+    //메뉴-소개팝업
+    let btnPopIntroOpen = $('.btn-pop-intro');
+    let btnPopIntroClose = $('.btn-popup-close');
+    let popIntro = $('.menu-popup-nuri-intro')
+    btnPopIntroOpen.on('click',function(){
+        popIntro.css('display','block');
     });
     
+    btnPopIntroClose.on('click',function(){
+        popIntro.css('display','none');
+    });
 
 });
 </script>

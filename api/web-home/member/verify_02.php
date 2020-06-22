@@ -1,4 +1,6 @@
 <?php
+    $m = "menu";
+
 	include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/common/top.php";
 
 ?>
@@ -98,16 +100,26 @@
                     </div>
                 </div>
                 <div class="page-footer">
-                    <div class="lv-btn-float-cover">
-                        <!-- 필수 체크 됐을 경우 disabled 제거 -->
-                        <a href="#" onclick="javascript: verify02();" id="nx_btn" class="lv-btn-primary" disabled>다음</a>
-                        <!-- <a href="./verify_02.html" class="lv-btn-primary">다음</a> -->
-                    </div>
+					<div class="lv-btn-float-cover-wrapper">
+						<div class="lv-btn-float-cover">
+							<!-- 필수 체크 됐을 경우 disabled 제거 -->
+							<a href="#" onclick="javascript: verify02();" id="nx_btn" class="lv-btn-primary" disabled>다음</a>
+							<!-- <a href="./verify_02.html" class="lv-btn-primary">다음</a> -->
+						</div>
+					</div>
                 </div>
             </div>
         </main>
         <!-- /.container -->
-
+		<script>
+			//키패드 화면가림 방지
+			$(document).ready(function(){
+				$(window).resize(function(){
+				let topPos = $(document).height();
+				$('html, body').scrollTop(topPos);
+				});
+			});
+		</script>
 
 <?php
 	include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/common/bottom.php";

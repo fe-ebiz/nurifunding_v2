@@ -41,5 +41,15 @@
     </div>
 </main>
 <!-- /.container -->
+<script>
+    //키패드 화면가림 방지
+    $(document).ready(function(){
+        $(window).resize(function(){
+        let topPos = $(document).height();
+        $('html, body').scrollTop(topPos);
+        });
+    });
+        
+</script>
 
 @@include('src/template_app/inc/livemate/_bottom.html')

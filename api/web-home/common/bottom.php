@@ -29,12 +29,25 @@
 
         btnOpen.on('click',function(){
             menu.css('display','block');
-            $("html, body").css("overflow-y",'hidden');
+            $("main").css("display",'none');
         });
         btnClose.on('click',function(){
             menu.css('display','none');
-            $("html, body").css("overflow-y",'scroll');
+            $("main").css("display",'block');
+        });
 
+        //메뉴-누리펀딩소개 팝업 관련
+        let btnPopIntroOpen = $('.btn-pop-intro');
+        let btnPopIntroClose = $('.btn-popup-close');
+        let popIntro = $('.menu-popup-nuri-intro')
+
+        btnPopIntroOpen.on('click',function(){
+            popIntro.css('display','block');
+            /*not-scroll제거*/
+            $("body").removeClass('not-scroll');
+        });
+        btnPopIntroClose.on('click',function(){
+            popIntro.css('display','none');
         });
     
     });

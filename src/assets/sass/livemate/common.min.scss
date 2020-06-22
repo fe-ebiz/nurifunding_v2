@@ -198,7 +198,178 @@ body {
             }
         }
     }
+    //메뉴 팝업
+    .menu-popup-nuri-intro{
+        display: none;
+        z-index: 20;
+        position: absolute;
+        top: 0;
+        background-color: white;
+        .popup-close-box{
+            position: relative;
+            height: 48px;
+            .btn-popup-close{
+                position: absolute;
+                top: 12.5px;
+                right: 16px;
+                width: 24px;
+            }
+        }
+        &>section{
+            padding:0 24px;
+            padding-bottom: 50px;
+        }
+        .popup-intro01{
+            .intro-logo-box{
+                margin-bottom: 12px;
+                display: flex;
+                align-items: center;
+                .img-logo{
+                    width: 28px;
+                    margin-right: 6px;
+                }
+                .logo-name{
+                    font-size: 23px;
+                    font-weight: 500;
+                }
+            }
+            .intro-sub-title{
+                color: #3182F6;
+                font-size: 23px;
+                letter-spacing: -0.46px;
+                line-height: 32px;
+                word-break: keep-all;
+                margin-bottom: 32px;
+            }
+            .intro-point-ul{
+                &>li{
+                    width: 100%;
+                    display: flex;
+                    padding-bottom: 24px;
+                    .point-img-box{
+                        width:70px;
+                        // &>img{
+                        //     // width: 70px;
+                        // }
+                    }
+                    .point-txt-box{
+                        width: calc(100% - 70px);
+                        word-break: keep-all;
+                        padding-left: 16px;;
+                        h6{
+                            color: #231916;
+                            font-size: 17px;
+                            font-weight: 600;
+                            line-height: 22px;
+                            letter-spacing: -0.34px;
+                            padding-bottom: 1px;
+                        }
+                        .txt-content{
+                            color: #231916;
+                            font-size: 15px;
+                            line-height: 21px;
+                            letter-spacing: -0.3px;
+                        }
+                    }
+                }
+            }
+            .intro-table-ul{
+                width: 100%;
+                display: flex;
+                flex-wrap: wrap;
+                border-top: 1px solid #C3C3C3;
+                border-left: 1px solid #C3C3C3;
+                &>li{
+                    width: 50%;
+                    padding-top: 17px;
+                    padding-bottom: 13px;
+                    &.table-top{
+                        background-color: #F6F6F6;
+                    }
+                    p{
+                        text-align: center;
+                        &.table-naem{
+                            font-size: 15px;
+                            line-height: 28px;
+                        }
+                        &.table-content{
+                            color: #3182F6;
+                            font-size: 19px;
+                            line-height: 28px;
+                        }
+                    }
+                    width: 50%;
+                    border-right: 1px solid #C3C3C3;
+                    border-bottom: 1px solid #C3C3C3;
+                }
+            }
+        }
+        //==인트로01 끝/
+        .popup-intro02{
+            padding-top: 48px;
+            color: white;
+            text-align: center;
+            background-color: #09345F;
+            h5{
+                font-size: 19px;
+                font-weight: 600;
+                letter-spacing: -0.47px;
+                margin-bottom: 15px;
+            }
+            .sub-title{
+                font-size: 15px;
+                line-height: 22px;
+                letter-spacing: -0.38px;
+                margin-bottom: 32px;
+            }
+        }
+        .popup-intro03{
+            padding-top: 45px;
+            color: #000;
+            text-align: center;
+            background-color: #E3EEFE;
+            h5{
+                font-size: 19px;
+                font-weight: 600;
+                letter-spacing: -0.47px;
+                margin-bottom: 15px;
+            }
+            .sub-title{
+                font-size: 15px;
+                line-height: 22px;
+                letter-spacing: -0.38px;
+                margin-bottom: 32px;
+            }
+        }
+        .popup-bottom{
+            padding: 21px 0 26px 24px;
+            .popup-bottom-logo{
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                .img-logo{
+                    margin-right: 6px;
+                }
+                .logo-name{
+                    font-size: 15px;
+                    font-weight: 500;
+                }
+            }
+            .popup-bottom-service{
+                p{
+                    padding-bottom: 6px;
+                    color: #828282;
+                    font-size: 12px;
+                    .phon-num{
+                        color: #3182F6;
+                    }
+                }
+            }
+        }
+    }
 }
+//메뉴끝부분
+
 
 .lv-group-1 {
     @include lv-layout-1;
