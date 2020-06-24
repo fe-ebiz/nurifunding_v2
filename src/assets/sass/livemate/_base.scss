@@ -1275,6 +1275,15 @@ button[class*=lv-btn] {
     padding-right: 32px;
 }
 
+.lv-input-backnum{
+    border-bottom: 1px solid #3182F6;
+    // padding-right: 32px;
+    &:focus {
+        border-bottom: 1px solid  #c3c3c3;
+        padding-right: 32px;
+    }
+}
+
 .lv-form-won {
     position: absolute;
     top: 0;

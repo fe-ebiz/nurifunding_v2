@@ -177,9 +177,14 @@ if($_SERVER["REMOTE_ADDR"] != "61.74.233.194" && $_SERVER["REMOTE_ADDR"] != "61.
 			//키패드 화면가림 방지
     		$(document).ready(function(){
         		$(window).resize(function(){
-            	let topPos = $(document).height();
+            		let topPos = $(document).height();
             	$('html, body').scrollTop(topPos);
 				});
+				//아이폰용
+				$('input').focus(function(){
+					let topPos = $(document).height();
+				$('html, body').scrollTop(topPos);
+			});
 			});
         
 		</script>

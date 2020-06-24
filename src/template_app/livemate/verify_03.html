@@ -44,10 +44,20 @@
 <script>
     //키패드 화면가림 방지
     $(document).ready(function(){
-        $(window).resize(function(){
+        // $(window).resize(function(){
+        // let topPos = $(document).height();
+        // $('html, body').scrollTop(topPos);
+        // });
+        /*아이폰*/
+        $('input').focus(function(){
         let topPos = $(document).height();
         $('html, body').scrollTop(topPos);
         });
+    });
+
+    //아이폰 화면가림 방지
+    $(document).ready(function(){
+        
     });
         
 </script>

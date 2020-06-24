@@ -490,10 +490,13 @@
         //         width: 100%;
         //     }
         // }
-
+        .intro-sub-title{
+            margin-bottom: 14px;
+        }
+        padding-top: 26px;
         .item-progress {
             position: relative;
-
+            margin-top: 55px;
             .progressbar {
                 width: 100%;
                 height: 16px;
@@ -575,7 +578,7 @@
 
     .invest-point-wrapper {
         padding-top: 32px;
-
+        margin-top: 24px;
         .point-list-wrapper {}
 
         .point-list {
@@ -1030,6 +1033,10 @@
     }
 }
 
+/*scf-이미지 버튼*/
+.scf-wrapper{
+    margin-top: 32px;   
+}
 
 /*scf-이미지 제어*/
 .scf-img{
