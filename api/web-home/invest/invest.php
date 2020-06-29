@@ -6,6 +6,11 @@
 	}
 
 	$goods = mysqli_fetch_array(mysqli_query($dbconn, "select * from goods where num = '".XORDecode($_GET["num"])."'"));
+
+    if($goods["state"] == "N" || $goods["liiv"] == "N") {
+		jsMsg('투자가 종료된 상품입니다.', './list.php');
+    }
+
 	$info	= mysqli_fetch_array(mysqli_query($dbconn, "select * from goods_info where goods_no = '".$goods["num"]."'"));
 	//## =========================== 멤버 잔액조회 ===========================
 		$url			= "/v5/member/seyfert/inquiry/balance";
@@ -30,16 +35,8 @@
 		$limit2			= 0;	// 전체금액
 		$limit3			= 0;	// 부동산
 		$limit4			= 0;	// 동산
-<<<<<<< HEAD
-<<<<<<< HEAD
         $liiv           = 0;    // 리브메이트
 
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
-        $liiv           = 0;    // 리브메이트
-
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 		$mem_chk_qry	= "SELECT SUM(a.price) AS all_price, b.gtype as gtype, b.uid as goods_uid FROM pay AS a LEFT JOIN goods AS b ON a.goodsno = b.num WHERE a.uid = ".$member_info["num"]." AND a.state = 'Y' AND a.type='none' AND a.gubun = '-' GROUP BY a.goodsno";
 		$mem_chk_res	= mysqli_query($dbconn, $mem_chk_qry);
 		while($mem_all	= @mysqli_fetch_array($mem_chk_res)) {
@@ -80,10 +77,6 @@
 			$limit2		= $limit2 - $money["all_price"];
 		}
 	//## =========================== 멤버 잔역 한도 조회 (투자금 - 회수원금) - 끝 ===========================	
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 
     $lq = "select sum(price) as price from pay where uid = '".$member_info["num"]."' and type='none' AND gubun = '-' and state = 'Y' and flag = 'l'";
     $lr = mysqli_query($dbconn, $lq);
@@ -97,11 +90,6 @@
 
     $liiv -= $lv2["price"];
 
-<<<<<<< HEAD
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 ?>
 
 <script>
@@ -136,18 +124,21 @@
 	
 	
 	function app_submit() {
-		if($("input[name='use_cash']").val() <= 0) {
+        var u_cash = Number($("input[name='use_cash']").val().replace(',', ''));
+
+
+		if(u_cash <= 0) {
 			alert("투자금액을 확인해주세요");
 			return false;
 		}
 
-		if($("input[name='use_cash']").val()*10000 < 10000) {
+		if(u_cash*10000 < 10000) {
 			alert("투자금액은 최소 1만원 입니다.");
 			return false;
 		}
 
 		// 투자실행금
-		var use_cash = Number($("input[name='use_cash']").val()) * 10000;
+		var use_cash = u_cash * 10000;
 
 		if(use_cash > Number($("input[name='info_cash']").val())) {
 			alert("투자금액이 보유하신 예치금보다 많습니다.");
@@ -159,18 +150,9 @@
 		
 		var all_price	= use_cash + (Number($("input[name='mem_chk_2']").val()));
 		var all_limit	= (Number($("input[name='limit2']").val()));
-<<<<<<< HEAD
-<<<<<<< HEAD
         
 		var lv_price	= use_cash + (Number($("input[name='mem_chk_5']").val()));
 		var lv_limit	= (Number($("input[name='limit5']").val()));
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
-        
-		var lv_price	= use_cash + (Number($("input[name='mem_chk_5']").val()));
-		var lv_limit	= (Number($("input[name='limit5']").val()));
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 
 		var gtype		= $('input[name="gtype"]').val();
 
@@ -198,20 +180,11 @@
 			alert("플랫폼 투자한도가 초과되었습니다.");
 			return false;
 		}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 		
 		if(lv_price > lv_limit) {
 			alert("리브메이트 투자한도가 초과되었습니다.");
 			return false;
 		}
-<<<<<<< HEAD
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 
 		$('#investForm').submit();
 	}
@@ -231,27 +204,13 @@
 		<input type="hidden" name="limit2" value="<?=$limit_a;?>" />
 		<input type="hidden" name="limit3" value="<?=$limit_3;?>" />
 		<input type="hidden" name="limit4" value="<?=$limit_4;?>" />
-<<<<<<< HEAD
-<<<<<<< HEAD
 		<input type="hidden" name="limit5" value="1000000" />
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
-		<input type="hidden" name="limit5" value="1000000" />
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 		
 		<input type="hidden" name="mem_chk_1" value="<?=$limit1;?>" />
 		<input type="hidden" name="mem_chk_2" value="<?=$limit2;?>" />
 		<input type="hidden" name="mem_chk_3" value="<?=$limit3;?>" />
 		<input type="hidden" name="mem_chk_4" value="<?=$limit4;?>" />
-<<<<<<< HEAD
-<<<<<<< HEAD
 		<input type="hidden" name="mem_chk_5" value="<?=$liiv;?>" />
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
-		<input type="hidden" name="mem_chk_5" value="<?=$liiv;?>" />
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 
 		<input type="hidden" name="info_cash" value="<?=$cash;?>" />
 
@@ -300,15 +259,7 @@
 				<div class="invest-price-wrapper mt-2">
 					<div class="form-group d-flex align-items-center justify-content-space-between child-flex-1 mb-0-5">
 						<div class="lv-form-input-cover w-auto">
-<<<<<<< HEAD
-<<<<<<< HEAD
-							<input type="text" name="use_cash" class="lv-form-input lv-title-l active-text-blue won-container commas" placeholder="투자금액" numberonly>
-=======
 							<input type="text" name="use_cash" class="lv-form-input lv-title-l active-text-blue won-container commas lv-form-input-text-center" placeholder="투자금액" numberonly>
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
-							<input type="text" name="use_cash" class="lv-form-input lv-title-l active-text-blue won-container commas" placeholder="투자금액" numberonly>
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
 							<span class="lv-form-won lv-title-l">만원</span>
 						</div>
 					</div>
@@ -409,14 +360,6 @@
 
 	</div>
 </div>
-
-    <div class="lv-toast-layer">
-        <div class="lv-toast-wrapper" id="lvToastWrapper" style="display: none">
-            <div class="lv-toast-container">
-                <p class="lv-text text-support">복사가 완료되었습니다.</p>
-            </div>
-        </div>
-    </div>
 
 
 <?php

@@ -34,7 +34,6 @@
 		return substr($ret,0,strlen($ret)-1);
 	}
 
-if($_SERVER["REMOTE_ADDR"] != "61.74.233.194" && $_SERVER["REMOTE_ADDR"] != "61.74.233.196") {
 	$qry = "select * from member where phone = '".$_POST["phone"]."' || ci = '".$_POST["ci"]."'";
 	
 	$res = mysqli_query($dbconn, $qry);
@@ -48,20 +47,18 @@ if($_SERVER["REMOTE_ADDR"] != "61.74.233.194" && $_SERVER["REMOTE_ADDR"] != "61.
 
         $phone = $mem["phone"];
         $ci = $mem["ci"];
+        $tracking_cd = $_POST["tracking_cd"];
         //# 리브메이트 데이터 전송
         include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/_member_success.php";
 
         if($rs_code != "0000") {
            jsMsg(' [ '.$rs_code.' ] 누리펀딩에 가입이 실패하였습니다.', '../intro.php');
            exit;
-        }
-        
-        setcookie(XOREncode("userid"), XOREncode($mem['userid']), 0, "/", base_cookie);
-
-        jsMsg('누리펀딩에 가입되어있는 회원입니다.', '../invest/list.php');
-        
+        } else {    
+            //@setcookie(XOREncode("userid"), XOREncode($mem['userid']), 0, "/", base_cookie);
+            jsMsg('누리펀딩에 가입되어있는 회원입니다.', '../ilist2.php?uid='.XOREncode($mem["userid"]).'');
+        }        
 	}
-}
 ?>
 
 		

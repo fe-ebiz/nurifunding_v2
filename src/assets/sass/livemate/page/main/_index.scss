@@ -286,7 +286,7 @@
 
     .agree-form-list {
         @include lv-layout-m-1;
-        margin-top: 64px;
+        margin-top: 36px;
         border: 1px solid #C3C3C3;
         border-radius: 5px;
 
@@ -417,10 +417,22 @@
         padding-top: 26px;
         padding-bottom: 26px;
         background-color: $bg-1;
+
+        .product-list-notice{
+            color: #828282;
+            font-size: 15px;
+            letter-spacing: -0.2px;
+            margin-bottom: 24px;
+            .span-dot{
+                width: 20px;
+                display: inline-block;
+                margin-right: -4px;
+            }
+        }
     }
 
     .product-list-min-height{
-        min-height: calc(100vh - 262px);
+        min-height: calc(100vh - 206px);
     }
 
     .product-list {
@@ -490,10 +502,20 @@
         //         width: 100%;
         //     }
         // }
+        padding-top: 26px;
         .intro-sub-title{
             margin-bottom: 14px;
+            .period-state{
+                margin-right: 8px;
+            }
         }
-        padding-top: 26px;
+        .product-item-title{
+            font-size: 22px;
+            font-weight: 500;
+            line-height: 28px;
+            letter-spacing: -0.2px;
+        }
+        
         .item-progress {
             position: relative;
             margin-top: 55px;
@@ -512,7 +534,7 @@
 
                 .percent-text {
                     position: absolute;
-                    right: -17px;
+                    right: -22px;
                     top: -40px;
                     display: flex;
                     justify-content: center;
@@ -883,6 +905,10 @@
             }
         }
     }
+    
+    .guidance-title{
+        padding: 22px 0;
+    }
 
     .mustread-wrapper {
         .mustread-text-list {
@@ -894,7 +920,7 @@
 
     .offer-wrapper {
         padding-top: 16px;
-        padding-bottom: 110px;
+        padding-bottom: 20px;
         background-color: $bg-1;
     }
 }

@@ -18,9 +18,9 @@
 	
 	$state_btn = "";
 	if(time() < strtotime($goods["sdate"])) {
-		$state_btn = '<span class="lv-btn-flag text-base bor-0 badge-period">예정</span>';
+		$state_btn = '<span class="lv-btn-flag text-base bor-0 badge-period period-state">예정</span>';
 	} else {
-		$state_btn = '<span class="lv-btn-flag text-blue border-blue badge-period">모집중</span>';
+		$state_btn = '<span class="lv-btn-flag text-blue border-blue badge-period period-state">모집중</span>';
 	}
 	
 	$goods_price	= number_change($goods["price"]);
@@ -39,10 +39,14 @@
 		$p_res = mysqli_query($dbconn, $p_chk);
 		$pay_c = mysqli_num_rows($p_res);
 
-		if($pay_c > 0) {
+        $a_chk = "select * from preauth where uid = '".$member_info["num"]."' order by num desc limit 1";
+        $a_res = mysqli_query($dbconn, $a_chk);
+        $auth_c = mysqli_fetch_array($a_res);
+
+		if($pay_c > 0 && $auth_c["state"] == "Y") {
 			$btn_link = "./invest.php?num=".XOREncode($goods["num"]);
 		} else {
-			$btn_link = "./new_invest.php?num=".XOREncode($goods["num"]);
+            $btn_link = "./new_invest.php?num=".XOREncode($goods["num"]);
 		}
 	} else {
 		$btn_link = "javascript: alert('비회원은 투자가 불가능합니다.');";
@@ -52,13 +56,13 @@
 		<main id="container" class="container" role="main">
             <div class="page-content product-detail-content">
                 <div class="page-body">
-                    <div class="product-intro-wrapper lv-group-1 mt-1">
+                    <div class="product-intro-wrapper lv-group-1 ">
                         <div class="product-intro">
-                            <div class="item-thumbnail"><img src="<?=$img[0];?>" alt="상품이미지"></div>
-                            <div class="item-period d-flex align-items-center justify-content-space-between mt-1">
+                            <!-- <div class="item-thumbnail"><img src="<?=$img[0];?>" alt="상품이미지"></div> -->
+                            <div class="item-period align-items-center justify-content-space-between intro-sub-title">
                                 <?=$state_btn;?><span class="lv-text text-support"><?=$sdate;?> ~ <?=$edate;?></span>
                             </div>
-                            <div class="item-title lv-title-l mt-0-5"><?=$goods["name"];?></div>
+                            <div class="item-title product-item-title"><?=$goods["name"];?></div>
                             <div class="item-info type-2 d-flex align-items-center justify-content-space-between mt-2 lv-group-1">
                                 <div class="el ta-center">
                                     <div class="lv-text text-support">연 수익률</div>
@@ -252,10 +256,6 @@
                         <div class="lv-title-m fw-b lv-group-1">투자 하이라이트</div>
                         <div class="highlight-text-list lv-text mt-3 lv-group-1">
 						
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
                             <?php
                                 $c_arr = explode("\r\n", $contents_arr[0]);
                                 for($i=0; $i<count($c_arr); $i++) {
@@ -273,16 +273,6 @@
                             ?>
 
                             <p class="d-flex align-items-top mt-1">
-<<<<<<< HEAD
-=======
-                            <p class="d-flex align-items-top justify-content-space-between">
-                                <i class="dot">·</i>
-                                <?=nl2br($contents_arr[0]);?>
-                            </p>
-                            <p class="d-flex align-items-top justify-content-space-between mt-1">
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
                                 <i class="dot">·</i>
                                 <?=nl2br($contents_arr[2]);?>
                             </p>
@@ -336,15 +326,7 @@
                         <div class="safety-text-list lv-text mt-3">
                             <div class="text-item d-flex align-items-top justify-content-space-between">
                                 <div class="el">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                     <img class="icon-system-img" src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
-=======
-                                    <img src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
-                                    <img class="icon-system-img" src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
                                 </div>
                                 <div class="el mt-0-5">
                                     <div class="title fw-m">담보물 변동사항 모니터링 시스템</div>
@@ -353,15 +335,7 @@
                             </div>
                             <div class="text-item d-flex align-items-top justify-content-space-between mt-2">
                                 <div class="el">
-<<<<<<< HEAD
-<<<<<<< HEAD
                                     <img class="icon-system-img" src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
-=======
-                                    <img src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
-                                    <img class="icon-system-img" src="https://nurifunding.co.kr/img/livemate/product/icon_system.png" alt="아이콘">
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
                                 </div>
                                 <div class="el mt-0-5">
                                     <div class="title fw-m">부실채권 사후처리 시스템</div>
@@ -413,7 +387,7 @@
                         </div>
                     </div>
                     <div class="scf-wrapper mt-7 lv-group-1">
-                        <div class="lv-title-m fw-b d-flex align-items-center justify-content-space-between">
+                        <!-- <div class="lv-title-m fw-b d-flex align-items-center justify-content-space-between">
                             SCF(선정산 서비스, 공급망 금융)란?
                         </div>
                         <p class="lv-text mt-2">
@@ -421,14 +395,14 @@
                         </p>
                         <div class="scf-img mt-3">
                             <img src="https://nurifunding.co.kr/img/livemate/product/scf.png" alt="선정산서비스">
-                        </div>
+                        </div> -->
                         <div class="scf-more mt-3">
                             <a href="javascript:;" data-toggle="modal" data-target="#productScfModal" role="button" class="lv-btn-tiny w-100 bor bx">SCF(선정산 서비스) 자세히 보기</a>
                         </div>
                     </div>
                     <hr class="line mt-7">
-                    <div class="collapse-btn-cover product-guidance mt-3 lv-group-2 lv-title-m d-flex align-items-center justify-content-space-between">
-                        <div class="lv-title-m">상품안내</div>
+                    <div class="collapse-btn-cover product-guidance lv-group-2 lv-title-m d-flex align-items-center justify-content-space-between">
+                        <div class="lv-title-m guidance-title">상품안내</div>
                         <div class="collapse-btn active" data-toggle="collapse" data-target="#productGuidance">
                             <img src="https://nurifunding.co.kr/img/livemate/common/arr_down.svg" alt="펼치기" class="down">
                             <img src="https://nurifunding.co.kr/img/livemate/common/arr_up.svg" alt="접기" class="up">
@@ -483,7 +457,7 @@
                                 </table>
                             </div>
                         </div>
-                        <div class="guidance-product-wrapper mt-7 lv-group-1">
+                        <div class="guidance-product-wrapper mt-7 lv-group-1 mb-4">
                             <div class="lv-title-m fw-b d-flex align-items-center justify-content-space-between">
                                 상품개요
                             </div>
@@ -492,15 +466,15 @@
                             </div>
                         </div>
                     </div>
-                    <hr class="line mt-7">
-                    <div class="collapse-btn-cover mustread mt-3 lv-group-2 lv-title-m d-flex align-items-center justify-content-space-between">
-                        <div class="lv-title-m">꼭 확인하세요</div>
+                    <hr class="line">
+                    <div class="collapse-btn-cover mustread lv-group-2 lv-title-m d-flex align-items-center justify-content-space-between">
+                        <div class="lv-title-m guidance-title">꼭 확인하세요</div>
                         <div class="collapse-btn active" data-toggle="collapse" data-target="#mustread">
                             <img src="https://nurifunding.co.kr/img/livemate/common/arr_down.svg" alt="펼치기" class="down">
                             <img src="https://nurifunding.co.kr/img/livemate/common/arr_up.svg" alt="접기" class="up">
                         </div>
                     </div>
-                    <div class="collapse mustread mt-3" id="mustread">
+                    <div class="collapse mustread mt-3 mb-4" id="mustread">
                         <div class="mustread-wrapper lv-group-2">
                             <div class="lv-text text-notemphasis mustread-text-list">
                                 <p class="d-flex align-items-top justify-content-space-between">
@@ -520,7 +494,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="offer-wrapper mt-5 lv-group-2">
+                    <div class="offer-wrapper lv-group-2">
                         <div class="logo-cover">
                             <img src="https://nurifunding.co.kr/img/livemate/common/logo_mark.png" alt="로고마크">
                             <span class="logo-text lv-text fw-m">누리펀딩</span>

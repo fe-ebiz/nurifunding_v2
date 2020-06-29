@@ -1,4 +1,6 @@
 <?php
+    $m = "menu";
+
 	include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/common/top.php";
 ?>		
 	<script>
@@ -56,7 +58,7 @@
 			$('form[name="jform"]').submit();
 		}
 	</script>
-		<div class="sr-only nuri-header-title-info">투자 계좌개설</div>
+		<div class="sr-only nuri-header-title-info">이커머스 선정산 투자</div>
         <main id="container" class="container" role="main">
             <div class="page-content verify-content">
                 <div class="page-body">
@@ -119,11 +121,13 @@
                     </div>
                 </div>
                 <div class="page-footer">
-                    <div class="lv-btn-float-cover">
-                        <!-- 필수 체크 됐을 경우 disabled 제거 -->
-                        <a href="javascript: agree_chk();" id="nx_btn" class="lv-btn-primary" disabled>다음</a>
-                        <!-- <a href="./verify_01.html" class="lv-btn-primary">다음</a> -->
-                    </div>
+					<div class="lv-btn-float-cover-wrapper">
+						<div class="lv-btn-float-cover">
+							<!-- 필수 체크 됐을 경우 disabled 제거 -->
+							<a href="javascript: agree_chk();" id="nx_btn" class="lv-btn-primary" disabled>다음</a>
+							<!-- <a href="./verify_01.html" class="lv-btn-primary">다음</a> -->
+						</div>
+					</div>
                 </div>
             </div>
         </main>

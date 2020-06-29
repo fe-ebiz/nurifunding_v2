@@ -90,7 +90,7 @@
 									<div class="form-group d-in-flex align-items-center justify-space-between back-number">
 										<div class="lv-form-input-cover d-flex align-items-center justify-space-between">
 											<!-- <span class="lv-title-m" id="jumin2_f"><?=$jumin2_f;?></span> -->
-											<input type="text" name="jumin2" onKeyup="javascript: btn_chk(this.value);"; class="lv-form-input lv-title-m remove-container text-blue lv-input-backnum" maxlength="7" numberonly>
+											<input type="text" name="jumin2" onKeyup="javascript: btn_chk(this.value);"; class="lv-form-input lv-title-m remove-container text-blue lv-input-backnum" maxlength="7" numberonly placeholder="뒷자리 입력">
 											<i class="lv-form-text-remove" data-role="form-text-remove"><img src="https://nurifunding.co.kr/img/livemate/common/form_text_remove.svg" alt="입력텍스트삭제"></i>
 										</div>
 									</div>

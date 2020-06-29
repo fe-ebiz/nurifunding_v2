@@ -17,33 +17,21 @@
                     <div class="body-subtitle lv-title-s text-notemphasis lv-group-1 mt-1">
                         1만원부터 투자가능한 연 10% 고수익 상품!
                     </div>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
->>>>>>> 3240507eacfb6245fcdf7660402517f4f220f1cf
                     <!--"i"버튼-인트로로 가기-->
                     <!-- <a class="product-list-btn-intro" href="http://api.nurifunding.co.kr/intro.php">
                         <img src="https://nurifunding.co.kr/img/livemate/common/btn_back_intro.png" alt="인트로 버튼">
-<<<<<<< HEAD
                     </a> -->
                     <div class="product-list-wrapper lv-group-1 product-list-min-height">
-=======
-                    </a>
-<<<<<<< HEAD
-=======
->>>>>>> d21286abd687670b700f28cc8b40299957a4c7b2
-=======
->>>>>>> c44ef4bcc634bdea549321b732e44524ba0632e1
-                    <div class="product-list-wrapper lv-group-1">
->>>>>>> 3240507eacfb6245fcdf7660402517f4f220f1cf
+                        <p class="product-list-notice"><span class="span-dot">ㆍ</span>투자상품은 매일 10시부터 수시 오픈됩니다.</p>
                         <ul class="product-list">
 							<?php
-        						//$qry = "select * from goods where state = 'Y' and  and liiv = 'Y' order by num desc";
-                                $qry = "select * from goods where liiv = 'Y' order by num desc";
+        						$qry = "select * from goods where state = 'Y' and  liiv = 'Y' order by num desc";
+                                //$qry = "select * from goods where liiv = 'Y' order by num desc";
 								$res = @mysqli_query($dbconn, $qry);
+
+                                $num = @mysqli_num_rows($res);
+
+                                if($num > 0) {
 								while($row = @mysqli_fetch_array($res)) {
                                     if (mb_strlen($row["name"] > 20)) {
                                         $name = mb_substr($row["name"], 0, 20);
@@ -78,6 +66,15 @@
                             </li>
 							<?php
 								}
+                                } else {
+                            ?>
+                            <li class="product-item">
+                                <br>
+                                <div class="item-title lv-text" style="text-align:center;">투자상품이 준비중입니다.</div>
+                                <br>
+                            </li>
+                            <?php
+                                }
 							?>
                         </ul>
                     </div>
