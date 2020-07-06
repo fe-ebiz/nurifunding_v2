@@ -108,19 +108,13 @@
                                         연체율 0%
                                     </div>
                                 </li>
-                                <li class="point-item">
+                                <li class="point-item lv-title-m">
                                     <div class="in">
                                         안정성 높은 SCF<br>
                                         (선정산) 상품
                                     </div>
                                 </li>
-                                <li class="point-item">
-                                    <div class="in">
-                                        투자자금 손실 보전<br>
-                                        프로그램 가동
-                                    </div>
-                                </li>
-                                <li class="point-item">
+                                <li class="point-item lv-title-m">
                                     <div class="in">
                                         1만원부터 가능한<br>
                                         고수익 소액투자

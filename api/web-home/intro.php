@@ -1,4 +1,6 @@
 <?php
+    $m = 'menu';
+
 	include "/home/ebizpub/web-home/nurifunding.co.kr/api/web-home/common/top.php";
 ?>
 	<script>
@@ -101,13 +103,58 @@
                         <div class="protect-card mt-4">
                             <div class="item-title lv-title-s"><span class="in">3중 투자자 보호장치 가동</span></div>
                             <div class="item-text">
-                                <p class="lv-text fw-m check">투자자금 손실 보전 프로그램</p>
                                 <p class="lv-text fw-m check mt-1">담보물 변동사항 모니터링 시스템</p>
                                 <p class="lv-text fw-m check mt-1">부실채권 사후관리 시스템</p>
                             </div>
                         </div>
                     </div>
-                    <div class="definition-wrapper lv-bg-1 mt-7">
+
+                    <div class="page-content product-list-content">
+                        <div class="product-list-wrapper lv-group-1">
+                            <ul class="product-list">
+                                <?php
+                                    //$qry = "select * from goods where state = 'Y' and  and liiv = 'Y' order by num desc";
+                                    $qry = "select * from goods where state = 'Y' and liiv = 'Y' order by num desc";
+                                    $res = @mysqli_query($dbconn, $qry);
+                                    while($row = @mysqli_fetch_array($res)) {
+                                        if (mb_strlen($row["name"] > 20)) {
+                                            $name = mb_substr($row["name"], 0, 20);
+                                            $name = $name."...";
+                                        } else {
+                                            $name = $row["name"];
+                                        }
+
+                                        $sdate = date("m.d H:i", strtotime($row["sdate"]));
+                                        $edate = date("m.d H:i", strtotime($row["edate"]));
+
+                                        $state_btn = "";
+                                        if(time() < strtotime($row["sdate"])) {
+                                            $state_btn = '<span class="lv-btn-flag text-base bor-0 badge-period">예정</span>';
+                                        } else {
+                                            $state_btn = '<span class="lv-btn-flag text-blue border-blue badge-period">모집중</span>';
+                                        }
+                                ?>
+                                <li class="product-item">
+                                    <a href="#">
+                                        <div class="item-title lv-text"><?=$name;?></div>
+                                        <div class="item-text lv-title-l d-flex align-items-center justify-content-space-between">
+                                            <div class="">
+                                                <span class="text-blue"><b>연 <?=$row["profit"];?>%</b></span> <b><?=$row["end_turn"];?>개월</b>
+                                            </div>
+                                        </div>
+                                        <div class="item-period">
+                                            <?=$state_btn;?><span class="lv-text text-support"><?=$sdate;?> ~ <?=$edate;?></span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <?php
+                                    }
+                                ?>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="definition-wrapper  mt-7">
                         <div class="lv-text text-base fw-b">1. P2P 금융이란?</div>
                         <div class="lv-text text-support mt-0-5">사람과 사람을 연결하는 온라인 금융으로 대출자가 낸 이자가 투자자의 수익이 되는 직거래 금융 방식 입니다.</div>
                         <div class="lv-text text-base fw-b mt-2">2. 이커머스 선정산이란?</div>
