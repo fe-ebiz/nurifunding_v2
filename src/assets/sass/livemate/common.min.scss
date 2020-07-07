@@ -182,6 +182,7 @@ body {
             display: flex;
             align-items: center;
             .img-logo{
+                width: 24px;
                 margin-right: 6px;
             }
             .logo-name{
@@ -267,7 +268,7 @@ body {
                             padding-bottom: 1px;
                         }
                         .txt-content{
-                            color: #828282;
+                            color: #717171;
                             font-size: 15px;
                             line-height: 21px;
                             letter-spacing: -0.3px;
@@ -350,6 +351,7 @@ body {
                 display: flex;
                 align-items: center;
                 .img-logo{
+                    width: 24px;
                     margin-right: 6px;
                 }
                 .logo-name{
@@ -507,4 +509,10 @@ body {
     100% {
         transform: rotate(360deg);
     }
+}
+
+
+//**//
+.logo-cover img{
+    width: 24px;
 }

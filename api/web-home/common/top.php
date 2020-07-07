@@ -2,6 +2,16 @@
 	include_once("/home/ebizpub/web-home/nurifunding.co.kr/config/config.php");
     include_once("/home/ebizpub/web-home/nurifunding.co.kr/config/KB_Liiv_lib.php");
     
+if($_SERVER["REMOTE_ADDR"] == "61.74.233.194") {
+  #  echo "<textarea>";
+  #  print_r($_SERVER);
+  #  echo "</textarea>";
+}
+
+$referer = "";
+if(!empty($_SERVER["HTTP_REFERER"]) && $_SERVER["HTTP_REFERER"] != "") {
+    $referer = $_SERVER["HTTP_REFERER"];
+}
 
 	$cash	= 0;
     if(!empty($member_info) && $member_info["guid"] != "") {
@@ -92,13 +102,13 @@
     <link rel="stylesheet" href="https://nurifunding.co.kr/static/css/livemate/contents.min.css?ver=<?=time();?>">
 
     <script src="https://nurifunding.co.kr/static/js/renew/libs/jquery-1.10.2.min.js"></script>
+    <script>
     <?php    
         if(!empty($member_info) && $member_info["guid"] != "") {
     ?>
-    <script>
         function copy() {
             var tmpTextarea = document.createElement('textarea');
-            tmpTextarea.value = "<?=$member_info['debank'];?> / <?=$member_info['debank_no'];?>";;
+            tmpTextarea.value = "<?=$member_info['debank'];?> / <?=$member_info['debank_no'];?>";
          
             document.body.appendChild(tmpTextarea);
             tmpTextarea.select();
@@ -107,25 +117,30 @@
             document.execCommand('copy');
             document.body.removeChild(tmpTextarea);
         }
-    </script>
+
+        function investView() {
+            var url = "externalhttps://api.nurifunding.co.kr/ilist.php?kblm_param=<?=$liv_param;?>";
+            location.href = url;
+        }
     <?php
         }    
     ?>
+    </script>
 </head>
 
 <body id="lv-mainPage" class="lv-main-page">
     <h1 class="sr-only">누리펀딩</h1>
     <div class="wrapper" id="wrapper">
 
-        <div class="app-header">
+        <!-- <div class="app-header">
             <a href="javascript: history.back()">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_black.png" alt="이전">
             </a>
-        </div>
+        </div> -->
 
         <!--누리펀딩 헤더-->
         <div class="nuri-header">
-            <a class="btn-prev" href="javascript: history.back()">
+            <a class="btn-prev" href="javascript: history.go(-1)">
                 <img src="https://nurifunding.co.kr/img/livemate/common/btn_arr_left_white.png" alt="이전">
             </a>
             <p class="nuri-header-title">문구 타이틀</p>
@@ -170,7 +185,7 @@
             <ul class="menu-ul">
                 <li><a href="/invest/list.php"><p>상품목록<span class="span-sub-txt"> 연10%</span></p></a></li>
                 <!-- <li><a href="#"><p>예치금 조회</p></a></li> -->
-                <li><a href='https://api.nurifunding.co.kr/ilist.php?kblm_param=<?=$liv_param;?>'><p>투자 상세내역</p></a></li>
+                <li><a href='#' onclick="javascript: investView();"><p>투자 상세내역</p></a></li>
                 <li><a class="btn-pop-intro" href="#" data-toggle="modal" data-target="#companyPop" role="button"><p>누리펀딩 소개</p></a></li>
             </ul>
             <div class="menu-bottom">
@@ -180,7 +195,7 @@
                 </div>
                 <div class="menu-bottom-service">
                     <p>고객센터 <span class="phon-num">1666-4570</span></p>
-                    <p>ㆍ평일 : 09시~18시 | 점심휴무 : 13시~14시</p>
+                    <p>ㆍ평일 : 09시~18시 | 점심휴무 : 12시~13시</p>
                     <p>ㆍ토/일/공휴일 휴무</p>
                 </div>
             </div>
@@ -216,7 +231,7 @@
                             <div class="point-img-box"><img src="https://nurifunding.co.kr/img/livemate/popup/intro/icon_intro03.png" alt="이미지"></div>
                             <div class="point-txt-box">
                                 <h6>30년 금융 전문가의 금융 분석</h6>
-                                <p class="txt-content">STAR Loan Rating 심사 알고리즘을 적 용해 믿을 수 있는 신용평가 시스템, 전 문가의 철두철미한 분석과 쉬운 설명으 로 투자 상품에 대한 이해를 높여줍니다.</p>
+                                <p class="txt-content">STAR Loan Rating 심사 알고리즘을 적 용해 믿을 수 있는 신용평가 시스템, 전 문가의 철두철미한 분석과 쉬운 설명으로 투자 상품에 대한 이해를 높여줍니다.</p>
                             </div>
                         </li>
                     </ul>
@@ -272,6 +287,9 @@
         </nav>
 
         <!-- 예치금 계좌정보 -->
+        <?php    
+            if(!empty($member_info) && $member_info["guid"] != "") {
+        ?>
         <div class="lv-modal-wrapper deposit-modal-wrapper" id="menuDepositPop" style="display: none; z-index:101;">
             <div class="lv-modal-container">
                 <div class="lv-modal-header">
@@ -302,6 +320,9 @@
                 </div>
             </div>
         </div>
+        <?php
+            }    
+        ?>
         <!-- 
         <div class="lv-modal-wrapper" id="companyPop" style="display:none; z-index:101; overflow:scroll">
             <div class="lv-modal-container">
